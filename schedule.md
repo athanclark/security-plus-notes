@@ -1,75 +1,75 @@
 ## Chapter 1, 2
 
-1. [x]
-2. [x]
+- [x] PowerPoint Chapter 1
+- [x] PowerPoint Chapter 2
 
-- [x] 1
-- [x] 2
-- [ ] 3
+- [x] Book Chapter 1
+- [x] Book Chapter 2
+- [ ] Book Chapter 3
 
 ## Chapter 5, 6
 
-5. [x]
-6. [ ]
+- [x] PowerPoint Chapter 5
+- [ ] PowerPoint Chapter 6
 
-- [ ] 6
-- [ ] 7
-- [ ] 11
+- [ ] Book Chapter 6
+- [ ] Book Chapter 7
+- [ ] Book Chapter 11
 
 ## Chapter 9, 13
 
-9.  [ ]
-13. [ ]
+- [ ] PowerPoint Chapter 9
+- [ ] PowerPoint Chapter 13
 
-- [ ] 4
-- [ ] 5
-- [ ] 12
-- [ ] 14
-- [ ] 17
+- [ ] Book Chapter 4
+- [ ] Book Chapter 5
+- [ ] Book Chapter 12
+- [ ] Book Chapter 14
+- [ ] Book Chapter 17
 
 ## Chapter 3, 4
 
-3. [ ]
-4. [ ]
+- [ ] PowerPoint Chapter 3
+- [ ] PowerPoint Chapter 4
 
-- [ ] 26
-- [ ] 27
-- [ ] 28
-- [ ] 29
+- [ ] Book Chapter 26
+- [ ] Book Chapter 27
+- [ ] Book Chapter 28
+- [ ] Book Chapter 29
 
 ## Chapter 8, 10
 
-8.  [ ]
-10. [ ]
+- [ ] PowerPoint Chapter 8
+- [ ] PowerPoint Chapter 10
 
-- [ ] 9
-- [ ] 13
+- [ ] Book Chapter 9
+- [ ] Book Chapter 13
 
 ## Chapter 7, 12
 
-7.  [ ]
-12. [ ]
+- [ ] PowerPoint Chapter 7
+- [ ] PowerPoint Chapter 12
 
-- [ ] 8
-- [ ] 10
-- [ ] 15
-- [ ] 18
-- [ ] 19
+- [ ] Book Chapter 8
+- [ ] Book Chapter 10
+- [ ] Book Chapter 15
+- [ ] Book Chapter 18
+- [ ] Book Chapter 19
 
 ## Chapter 11, 14
 
-11. [ ]
-14. [ ]
+- [ ] PowerPoint Chapter 11
+- [ ] PowerPoint Chapter 14
 
-- [ ] 20
-- [ ] 22
-- [ ] 23
-- [ ] 24
+- [ ] Book Chapter 20
+- [ ] Book Chapter 22
+- [ ] Book Chapter 23
+- [ ] Book Chapter 24
 
 ## Chapter 15
 
-15. [ ]
+- [ ] PowerPoint Chapter 15
 
-- [ ] 16
-- [ ] 21
-- [ ] 25
+- [ ] Book Chapter 16
+- [ ] Book Chapter 21
+- [ ] Book Chapter 25
