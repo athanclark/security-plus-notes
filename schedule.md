@@ -10,7 +10,7 @@
 ## Chapter 5, 6
 
 - [x] PowerPoint Chapter 5
-- [ ] PowerPoint Chapter 6
+- [x] PowerPoint Chapter 6
 
 - [ ] Book Chapter 6
 - [ ] Book Chapter 7
@@ -18,7 +18,7 @@
 
 ## Chapter 9, 13
 
-- [ ] PowerPoint Chapter 9
+- [x] PowerPoint Chapter 9
 - [ ] PowerPoint Chapter 13
 
 - [ ] Book Chapter 4
