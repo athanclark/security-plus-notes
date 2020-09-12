@@ -6,6 +6,9 @@ Client and Application Security
 
 ## Hardware System Security
 
+Supply Chain Infections are difficult to determine, and revert - it's virtually impossible
+to monitor every step.
+
 ### Secure Boot
 
 - BIOS can be updated with malware
@@ -19,15 +22,23 @@ Client and Application Security
 
 Hardware being the root.
 
+- _Shimming_ - a middleman between the kernel and driver
+
 ### Preventing ElecroMagnetic Spying
 
 Telecommunications Electronics Material Protected from Emanating Spurious Transmissions (TEMPEST)
 
 > A classified standard to prevent attackers from picking up ambient readings
 
-----------------------
+### Protected Distribution System (PDS)
 
-- Supply Chain Infections are difficult to determine, and revert
+- _hardened carrier PDS_ - special, strengthened electrical tubing
+- _alarmed carrier PDS_ - fiber optics that sense acoustic vibrations
+  - Uses continuous monitoring
+  - Carrier can be hidden above the ceiling
+  - Eliminates the need to seal connections
+
+----------------------
 
 ## Securing Operating Systems
 
@@ -118,30 +129,53 @@ Telecommunications Electronics Material Protected from Emanating Spurious Transm
 
 ## Physical Security
 
-- External perimeter defenses - barriers, guards, motion detection - fencing, cages, bollards
-- Internal physical access security - door locks, access logs, mantraps, protected cabling distribution systems
+### External perimeter defenses
+
+- barriers, guards, motion detection, rolling barrier, type V controls FIXME
+- fencing, cages, bollards
+- Barricades are meant to direct traffic flow, not prevent access
+
+### Internal physical access security
+
+- door locks, access logs, mantraps, protected cabling distribution systems
   - cipher locks for date/time codes
-  - hardened carrier PDS - special electrical tubing
-  - alarmed carrier PDS - fiber optics that sense acoustic vibrations
+  - _keyed entry locks_ are most common
 - Security for protecting hardware devices
 - Closed Circuit Television (CCTV)
 
 ## Application Development Security
 
-- Development, Testing, Staging, Production
-- Waterfall vs. Agile
-- DevOps
-  - security automation
-  - continuous integration
-  - immutable systems
-  - infrastructure as code
-  - baselining
-  - based on agile
-- provisioning - puppet
+### Memory Vulnerabilities
+
+- buffer overflow
+- DLL injection
+- pointer dereferences
+
+### Stages
+
+- Development
+- Testing
+- Staging - "quality assurance"
+- Production
+
+> Waterfall vs. Agile
+
+### DevOps
+- security automation
+- continuous integration
+- immutable systems
+- infrastructure as code
+- baselining
+- based on agile
+- Provisioning - puppet
+
+### Methodologies
+
 - model verification
 - compiled code testing
 - runtime code testing
 - static program analyzers
 - dynamic analysis (fuzzing)
+  - randomized inputs
 - stress testing
 - integrity measurements

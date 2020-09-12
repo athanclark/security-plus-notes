@@ -5,7 +5,7 @@
 
 - [x] Book Chapter 1
 - [x] Book Chapter 2
-- [ ] Book Chapter 3
+- [x] Book Chapter 3
 
 ## Chapter 5, 6
 
@@ -19,7 +19,7 @@
 ## Chapter 9, 13
 
 - [x] PowerPoint Chapter 9
-- [ ] PowerPoint Chapter 13
+- [x] PowerPoint Chapter 13
 
 - [ ] Book Chapter 4
 - [ ] Book Chapter 5
