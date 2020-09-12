@@ -31,7 +31,7 @@ thus, there needs to be _high resiliency_ in crypto
 - Secure
 
 | Algorithm   | Length        | Traits                |
-| :---------- | :-------      | :-------              |
+| :---------- | :------------ | :-------------------- |
 | MD5         | 512b          | Collisions, Weak      |
 | SHA-2       | 128, 256, 512 | Secure                |
 | SHA-3       |               | Latest SHA, Low-Power |
@@ -45,6 +45,7 @@ thus, there needs to be _high resiliency_ in crypto
 > Private Key Cypto, Shared Key Crypto
 
 | Algorithm | Length                  | Traits                  |
+| :-------- | :---------------------- | :---------------------- |
 | DES       | 56b Key                 | Block Cipher            |
 | 3DES      | Can use 3 keys          | 3 rounds of DES         |
 | AES       | 128b plaintext          | NIST in 2000, Secure    |
@@ -63,6 +64,7 @@ thus, there needs to be _high resiliency_ in crypto
 > Public Key Crypto
 
 | Algorithm | Traits                                   |
+| :-------- | :--------------------------------------- |
 | RSA       | Prime Numbers, 1997 MIT, Most Common     |
 | ECC       | Elliptic Curve, Less Power, Smaller Keys |
 | DSA       | Digital Signatures                       |
