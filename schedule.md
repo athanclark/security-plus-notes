@@ -29,7 +29,7 @@
 
 ## Chapter 3, 4
 
-- [ ] PowerPoint Chapter 3
+- [x] PowerPoint Chapter 3
 - [ ] PowerPoint Chapter 4
 
 - [ ] Book Chapter 26
