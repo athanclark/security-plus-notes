@@ -1,7 +1,9 @@
 ## Chapter 1, 2
 
 - [x] PowerPoint Chapter 1
+- [x] Review
 - [x] PowerPoint Chapter 2
+- [x] Review
 
 - [x] Book Chapter 1
 - [x] Book Chapter 2
@@ -10,16 +12,20 @@
 ## Chapter 5, 6
 
 - [x] PowerPoint Chapter 5
+- [x] Review
 - [x] PowerPoint Chapter 6
+- [x] Review
 
-- [ ] Book Chapter 6
+- [x] Book Chapter 6
 - [ ] Book Chapter 7
 - [ ] Book Chapter 11
 
 ## Chapter 9, 13
 
 - [x] PowerPoint Chapter 9
+- [x] Review
 - [x] PowerPoint Chapter 13
+- [x] Review
 
 - [ ] Book Chapter 4
 - [ ] Book Chapter 5
@@ -30,7 +36,9 @@
 ## Chapter 3, 4
 
 - [x] PowerPoint Chapter 3
-- [ ] PowerPoint Chapter 4
+- [ ] Review
+- [x] PowerPoint Chapter 4
+- [ ] Review
 
 - [ ] Book Chapter 26
 - [ ] Book Chapter 27
@@ -39,8 +47,10 @@
 
 ## Chapter 8, 10
 
-- [ ] PowerPoint Chapter 8
-- [ ] PowerPoint Chapter 10
+- [x] PowerPoint Chapter 8
+- [ ] Review
+- [x] PowerPoint Chapter 10
+- [ ] Review
 
 - [ ] Book Chapter 9
 - [ ] Book Chapter 13
@@ -48,7 +58,9 @@
 ## Chapter 7, 12
 
 - [ ] PowerPoint Chapter 7
+- [ ] Review
 - [ ] PowerPoint Chapter 12
+- [ ] Review
 
 - [ ] Book Chapter 8
 - [ ] Book Chapter 10
@@ -59,7 +71,9 @@
 ## Chapter 11, 14
 
 - [ ] PowerPoint Chapter 11
+- [ ] Review
 - [ ] PowerPoint Chapter 14
+- [ ] Review
 
 - [ ] Book Chapter 20
 - [ ] Book Chapter 22
@@ -69,6 +83,7 @@
 ## Chapter 15
 
 - [ ] PowerPoint Chapter 15
+- [ ] Review
 
 - [ ] Book Chapter 16
 - [ ] Book Chapter 21

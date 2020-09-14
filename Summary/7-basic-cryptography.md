@@ -44,14 +44,15 @@ thus, there needs to be _high resiliency_ in crypto
 
 > Private Key Cypto, Shared Key Crypto
 
-| Algorithm | Length                  | Traits                  |
-| :-------- | :---------------------- | :---------------------- |
-| DES       | 56b Key                 | Block Cipher            |
-| 3DES      | Can use 3 keys          | 3 rounds of DES         |
-| AES       | 128b plaintext          | NIST in 2000, Secure    |
-| Rivest    |                         |                         |
-| Blowfish  | 64b blocks, 32-448 keys | No significant weakness |
-| IDEA      | 64b blocks, 128b Key    | 8 Rounds, EU            |
+| Algorithm | Type   | Length                   | Traits                  |
+| :-------- | :----- | :----------------------  | :---------------------- |
+| DES       | Block  | 56b Key                  | Not Secure              |
+| 3DES      | Block  | Can use 3 keys           | 3 rounds of DES         |
+| AES       | Block  | 128b plaintext, 192, 256 | NIST in 2000, Secure    |
+| RC-4 + BR | Stream | 56b, 128b Key            | Voice, Video, Streaming |
+| Rivest    |        |                          |                         |
+| Blowfish  | Block  | 64b blocks, 32-448 keys  | No significant weakness |
+| IDEA      | Block  | 64b blocks, 128b Key     | 8 Rounds, EU            |
 
 > DES - Data Encryption Standard
 >
