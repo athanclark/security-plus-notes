@@ -1,0 +1,212 @@
+<h1 id="basic-cryptography">Basic Cryptography</h1>
+<blockquote>
+<p>Security through obscurity is a <em>fallacy</em>!</p>
+</blockquote>
+<ul>
+<li><em>substitution cipher</em> ~ Cesarean cipher</li>
+<li><em>XOR cipher</em> - XOR with some repeated “combinator”</li>
+<li><em>diffusion</em> - small change in plaintext → large change in ciphertext</li>
+<li><em>confusion</em> - key/cleartext doesn’t relate in simple way to ciphertext</li>
+<li><em>non-repudiation</em> - proves that a user performed an action</li>
+<li><em>plaintext</em> - data that is to be encrypted</li>
+<li><em>cleartext</em> - data that has not yet been encrypted</li>
+</ul>
+<blockquote>
+<p>Resource vs. Security Constraint</p>
+</blockquote>
+<ul>
+<li>low-power devices need security</li>
+<li>crypto needs to work for devices with low-latency</li>
+<li>Energy, Latency, Security all fight in a trifecta</li>
+</ul>
+<p>thus, there needs to be <em>high resiliency</em> in crypto</p>
+<p>Four basic protections of crypto:</p>
+<ul>
+<li>Authenticity</li>
+<li>Confidentiality</li>
+<li>Integrity</li>
+<li>Non-Repudiation</li>
+</ul>
+<h2 id="crypto-algorithms">Crypto Algorithms</h2>
+<ul>
+<li>Stream Cipher - one character and replaces with another</li>
+<li>Block Cipher - entire block at a time</li>
+<li>Sponge Function - expansion of plaintext to larger ciphertext</li>
+</ul>
+<h3 id="hashing">Hashing</h3>
+<ul>
+<li>Fixed Size</li>
+<li>Unique</li>
+<li>Original</li>
+<li>Secure</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Algorithm</th>
+<th style="text-align: left;">Length</th>
+<th style="text-align: left;">Traits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">MD5</td>
+<td style="text-align: left;">512b</td>
+<td style="text-align: left;">Collisions, Weak</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SHA-1</td>
+<td style="text-align: left;">160b</td>
+<td style="text-align: left;">Weak</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SHA-2</td>
+<td style="text-align: left;">128 (9 r), 192 (11 r), 256 (13 r)</td>
+<td style="text-align: left;">Secure</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SHA-3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Latest SHA, Low-Power</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RIPEMD</td>
+<td style="text-align: left;">128, 256, 320</td>
+<td style="text-align: left;">Parallel</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HMAC</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Shared Key</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>RIPEMD - Race Integrity Primitives Evaluation Message Digest</p>
+</blockquote>
+<h3 id="symmetric-key-crypto">Symmetric Key Crypto</h3>
+<blockquote>
+<p>Private Key Cypto, Shared Key Crypto</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Algorithm</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Length</th>
+<th style="text-align: left;">Traits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DES</td>
+<td style="text-align: left;">Block</td>
+<td style="text-align: left;">56b Key</td>
+<td style="text-align: left;">Not Secure</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3DES</td>
+<td style="text-align: left;">Block</td>
+<td style="text-align: left;">Can use 3 keys</td>
+<td style="text-align: left;">3 rounds of DES</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">AES</td>
+<td style="text-align: left;">Block</td>
+<td style="text-align: left;">128b plaintext, 192, 256</td>
+<td style="text-align: left;">NIST in 2000, Secure</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RC-4 + BR</td>
+<td style="text-align: left;">Stream</td>
+<td style="text-align: left;">56b, 128b Key</td>
+<td style="text-align: left;">Voice, Video, Streaming</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rivest</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Blowfish</td>
+<td style="text-align: left;">Block</td>
+<td style="text-align: left;">64b blocks, 32-448 keys</td>
+<td style="text-align: left;">No significant weakness</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">IDEA</td>
+<td style="text-align: left;">Block</td>
+<td style="text-align: left;">64b blocks, 128b Key</td>
+<td style="text-align: left;">8 Rounds, EU</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>DES - Data Encryption Standard</p>
+<p>AES - Advanced Encryption Standard</p>
+<p>IDEA - International Data Encryption Algorithm</p>
+</blockquote>
+<h3 id="asymmetric-key-cypto">Asymmetric Key Cypto</h3>
+<blockquote>
+<p>Public Key Crypto</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Algorithm</th>
+<th style="text-align: left;">Traits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">RSA</td>
+<td style="text-align: left;">Prime Numbers, 1997 MIT, Most Common</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ECC</td>
+<td style="text-align: left;">Elliptic Curve, Less Power, Smaller Keys</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSA</td>
+<td style="text-align: left;">Digital Signatures, U.S. Fed Standard</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>perfect forward secrecy</em> - random public keys for each session</li>
+</ul>
+<h3 id="key-exchange">Key Exchange</h3>
+<blockquote>
+<p>Diffie-Hellman</p>
+</blockquote>
+<ul>
+<li>DH
+<ul>
+<li>Uses same keys each time</li>
+<li>agree on large prime number and related integer</li>
+</ul></li>
+<li>DH Ephemeral</li>
+<li>Elliptic Curve DH</li>
+</ul>
+<h2 id="attacks">Attacks</h2>
+<ul>
+<li>Knowledge of underlying plaintext language - i.e. English</li>
+<li>Distribution of characters - tons of E, little use of Q</li>
+<li>Null ciphertext - null value padding</li>
+<li>Management Frames - TCP/IP has a structure</li>
+<li>Collision Attack</li>
+<li>Birthday Attack</li>
+</ul>
+<h2 id="file-system-encryption">File System Encryption</h2>
+<ul>
+<li>EFS - Microsoft Windows Encrypting File System - NTFS</li>
+<li>Full Disk Encryption - BitLocker</li>
+<li>Hardware Encryption - trusted platform module, hardware security model
+<ul>
+<li>password-protected flash drives</li>
+<li>self-encrypting drives (SED)</li>
+<li>TPM - true random numbers &amp; other crypto services, built in motherboard / hardware</li>
+<li>HSM - onboard keygen and storage</li>
+</ul></li>
+</ul>

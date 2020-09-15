@@ -1,0 +1,75 @@
+<h1 id="wireless-network-security">Wireless Network Security</h1>
+<h2 id="wireless-basics">Wireless Basics</h2>
+<p>Uses Radio Frequency (RF) to communicate</p>
+<ul>
+<li>if same (or comparable) frequency is interfering, effect is <em>jamming</em>, also called <em>incidental interference</em></li>
+<li>NICs have MAC addresses (48b, 6B)</li>
+<li>IEEE 802.11 max output is 200 mW</li>
+<li>Wireless Access Points (WAP)</li>
+<li><em>Channel Width</em> - how much of the spectrum is tuned for this WAP</li>
+<li>WAPs traditionally radiate in all directions, and should be centrally located</li>
+<li>May require a <em>site survey</em> to make decisions on optimal WAP placement</li>
+<li><em>Fat APs</em> are self-contained, while <em>Thin APs</em> are usually PoE and relay the same wireless signal</li>
+</ul>
+<p>Major parts of a WAP:</p>
+<ul>
+<li>Antenna</li>
+<li>Transciever</li>
+<li>Bridging Software</li>
+<li>NIC</li>
+</ul>
+<h3 id="security">Security</h3>
+<blockquote>
+<p><em>“War Driving”</em> - the act of driving around, snooping for vulnerable access points</p>
+</blockquote>
+<h4 id="wep">WEP</h4>
+<p>Normally:</p>
+<ul>
+<li>64b Key Length</li>
+<li>24b IV</li>
+</ul>
+<p>Can be enhanced with TKIP:</p>
+<ul>
+<li>64b MIC (Message Integrity Check - HMAC) value</li>
+<li>128b Key Length</li>
+<li>IV increased to 48b</li>
+<li>Passphrases are used to derive a shared master key</li>
+<li>session keys are derived from master key + MAC</li>
+</ul>
+<h4 id="wpa2">WPA2</h4>
+<ul>
+<li>AES-CCMP
+<ul>
+<li>AES-256 with 13 rounds</li>
+</ul></li>
+<li>WPA Personal is authenticated with PSK</li>
+</ul>
+<h4 id="eap">EAP</h4>
+<ul>
+<li>Four packet types: Request, Response, Success, Failure</li>
+<li><em>Supplicant</em> sends identity information to <em>Authenticator</em></li>
+<li><em>Authenticator</em> is responsible for issuing EAP request packets</li>
+</ul>
+<h4 id="captive-portal-ap">Captive Portal AP</h4>
+<h4 id="x-authentication">802.1x Authentication</h4>
+<ul>
+<li>Most secure is <em>certificate-based authentication</em></li>
+</ul>
+<h2 id="bluetooth">BlueTooth</h2>
+<ul>
+<li>Current version: 5
+<ul>
+<li>max-range: 800ft</li>
+</ul></li>
+<li>Vulnerable to <em>bluesnarfing</em> and <em>bluejacking</em>
+<ul>
+<li>snarfing - smell, jacking - uh…</li>
+</ul></li>
+<li>uses <em>short-range</em> radio</li>
+<li><em>Personal Area Networks</em></li>
+<li>make <em>piconets</em>
+<ul>
+<li><em>active</em> and <em>parked</em> slaves</li>
+<li>interconnected piconets form <em>scatternets</em></li>
+</ul></li>
+</ul>

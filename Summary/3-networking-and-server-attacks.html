@@ -1,0 +1,69 @@
+<h1 id="networking-and-server-attacks">Networking and Server Attacks</h1>
+<h2 id="interception-attacks">Interception Attacks</h2>
+<ul>
+<li><em>Man-in-the-Middle</em> - Between two hosts</li>
+<li><em>Man-in-the-Browser</em> - Between the browser and underlying computer, usually by Trojan-installed extension</li>
+<li><em>Replay Attacks</em> - copies credentials or session token - <em>not</em> a MitM</li>
+</ul>
+<h2 id="poisoning-attacks">Poisoning Attacks</h2>
+<ul>
+<li><em>ARP Poisoning</em> - “Yep, I’m x:x:x:x! I promise!”, “you hear that guys, he’s x:x:x:x!”</li>
+<li><em>DNS Poisoning</em> - “Yep, x.x.x.x is the ip of foo.com!”, “you hear that guys, x.x.x.x is foo.com!”
+<ul>
+<li>can be performed locally or at a higher echelon</li>
+</ul></li>
+<li><em>Privilege escalation</em> - exploits vulnerabilities in a trusted process, or, hijacks control of a horizontal <em>other</em> user</li>
+</ul>
+<h2 id="server-attacks">Server Attacks</h2>
+<h3 id="denial-of-service">Denial of Service</h3>
+<blockquote>
+<p>overwhelms a server by saturating its resources, either by looping in the network, exceeding bandwidth, or depleting it’s hardware</p>
+</blockquote>
+<ul>
+<li><em>DDoS</em> - performed by a botnet</li>
+<li><em>Smurf attack</em> - spoofed echo request with target as <code>from</code></li>
+<li><em>DNS amplification</em> - pretend like the target is asking for DNS lookups; utilize public infrastructure through botnets</li>
+<li><em>SYN flooding</em> - spoofed with bogus IP, asks target to sync with it - forever waiting for ACK</li>
+</ul>
+<h3 id="hijacking">Hijacking</h3>
+<ul>
+<li>Session hijacking - stolen session token - via XSS, MITM, or guessing</li>
+<li>URL hijacking - aka “typo squatting” - also “bit squatting”</li>
+<li>Domain hijacking - attacker somehow changes DNS record</li>
+<li>Clickjacking - Zero-pixel element in HTML</li>
+</ul>
+<h3 id="overflow-attacks">Overflow Attacks</h3>
+<ul>
+<li>Buffer overflow - bleed out a buffer, and write an instruction into forbidden memory space</li>
+<li>Integer overflow - goes negative</li>
+</ul>
+<h3 id="advertising-attacks">Advertising Attacks</h3>
+<ul>
+<li>Malvertising - poisoned ads; using ads to distribute malware</li>
+<li>Ad Fraud - forges / spoofs “clicks” to steal revenue</li>
+</ul>
+<h3 id="exploiting-browser-vulnerabilities">Exploiting Browser Vulnerabilities</h3>
+<ul>
+<li>Extensions, plugins, add-ons</li>
+<li>Extensions affect a single site, FIXME check graph</li>
+</ul>
+<h3 id="zero-day-attack">Zero-Day Attack</h3>
+<blockquote>
+<p>nobody saw it coming, because nobody knew the vulnerability existed</p>
+</blockquote>
+<h3 id="web-server-application-attacks">Web Server Application Attacks</h3>
+<h4 id="cross-site-attacks">Cross-Site Attacks</h4>
+<ul>
+<li>Cross-Site Scripting (XSS) - attacker’s facebook bio is a script, and victim looks at their profile
+<ul>
+<li><em>Non-persistent XSS</em> - embeds a script in the URL, or something similar</li>
+<li><em>Persistent XSS</em> - stored on a website (i.e. facebook post), viewed / executed by many</li>
+</ul></li>
+<li>Cross-Site Request Forgery (XSRF) - Clicks on threat agent’s web page (with CORS enabled) and obtains their previous session tokens</li>
+</ul>
+<h4 id="injection-attacks">Injection Attacks</h4>
+<ul>
+<li>SQL Injection - unsanitized input that’s used in a SQL query can have its command overridden</li>
+<li>LDAP Injection - gets phone numbers</li>
+<li>XML Injection</li>
+</ul>

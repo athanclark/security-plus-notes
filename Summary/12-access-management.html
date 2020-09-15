@@ -1,0 +1,281 @@
+<h1 id="access-management">Access Management</h1>
+<blockquote>
+<p>IAAAA - Identification, Authentication, Authorization, Access, Accounting</p>
+</blockquote>
+<ul>
+<li><p><em>Object</em> - resource</p></li>
+<li><p><em>Subject</em> - a user, or function acting on behalf of a user</p></li>
+<li><p><em>Operation</em> - the action taken by a subject, over an object</p></li>
+<li><p><em>Privacy Officer</em> - oversees privacy compliance</p></li>
+<li><p><em>Custodian or Steward</em> - reviews security settings and makes audit trails</p></li>
+<li><p><em>Owner</em> - person responsible for the information</p></li>
+<li><p><em>End user</em> - person who accesses the information</p></li>
+</ul>
+<h2 id="accounts">Accounts</h2>
+<p>Types of Accounts:</p>
+<ul>
+<li>User Accounts</li>
+<li>Service Accounts</li>
+<li>Privileged Accounts</li>
+</ul>
+<h3 id="initial-set-up">Initial Set-Up</h3>
+<ul>
+<li>Employee Accounts</li>
+<li>Location Based Settings</li>
+<li>Standard Naming Conventions
+<ul>
+<li>aclark, athan.clark, clarkaem, clark.al.aem</li>
+</ul></li>
+<li>Time-Of-Day Restrictions</li>
+<li>Enforcing Least-Privilege</li>
+<li>Routine Auditing
+<ul>
+<li>Recertification</li>
+<li>Permission auditing &amp; review</li>
+<li>Usage auditing &amp; review</li>
+</ul></li>
+</ul>
+<h3 id="offboarding">Offboarding</h3>
+<ul>
+<li>Backup of employee’s data</li>
+<li>Archive email &amp; hide record in address book</li>
+<li><em>orphaned</em> vs. <em>dormant</em></li>
+</ul>
+<h2 id="access-control-model">Access Control Model</h2>
+<blockquote>
+<p>Properly configuring accounts is first step in security</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 70%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Explanation</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">MAC</td>
+<td style="text-align: left;">End user cannot set controls</td>
+<td style="text-align: left;">Most restrictive</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DAC</td>
+<td style="text-align: left;">Subject has total control over objects</td>
+<td style="text-align: left;">Least restrictive</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">RBAC</td>
+<td style="text-align: left;">Assigns users and objects to role hierarchy</td>
+<td style="text-align: left;">Real-World</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RB-RBAC</td>
+<td style="text-align: left;">Dynamically assigns roles based on rules</td>
+<td style="text-align: left;">Managing user access to multi-systems</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ABAC</td>
+<td style="text-align: left;">Uses policies that can combine attributes</td>
+<td style="text-align: left;">Most flexible</td>
+</tr>
+</tbody>
+</table>
+<h3 id="discretionary-access-control-dac">Discretionary Access Control (DAC)</h3>
+<ul>
+<li>Least Restrictive</li>
+<li>Every Object has an Owner</li>
+<li>Owners have total control</li>
+<li>Owners can give permission to subjects</li>
+<li>Used in operating systems</li>
+</ul>
+<h4 id="weakness">Weakness</h4>
+<ul>
+<li>Relies on decisions of end user to set proper security</li>
+<li>Security permissions are inherited by processes</li>
+</ul>
+<h3 id="mandatory-access-control-mac">Mandatory Access Control (MAC)</h3>
+<ul>
+<li>Most restrictive - has no control to change security policy</li>
+<li>Military settings</li>
+<li><em>Labels</em> - every object is assigned a classification label, subjects assigned a clearance label</li>
+<li><em>Levels</em> - hierarchy of labels</li>
+<li>major implementations: Lattice Model, Bell-LaPadula Model
+<ul>
+<li>In Bell-LaPadula, subjects may not create objects or perform operations on lower level objects</li>
+</ul></li>
+<li>Windows uses Mandatory Integrity Control (MIC)
+<ul>
+<li>User Access Control (UAC) and security ids (SID)</li>
+</ul></li>
+</ul>
+<h3 id="role-based-access-control-rbac">Role Based Access Control (RBAC)</h3>
+<blockquote>
+<p>Non-Discretionary Access Control</p>
+</blockquote>
+<ul>
+<li>Access permissions are based on user’s job function</li>
+<li>i.e. user groups</li>
+</ul>
+<h3 id="rule-based-access-control">Rule Based Access Control</h3>
+<blockquote>
+<p>Rule-Based Role-Based Access Control (RB-RBAC)</p>
+</blockquote>
+<ul>
+<li>Dynamically assigns roles to subjects based on a set of rules set by custodian</li>
+<li>Used for managing system access to one or more systems - business changes → rule changes → access changes</li>
+</ul>
+<h3 id="attribute-based-access-control">Attribute-Based Access Control</h3>
+<ul>
+<li>Most flexible</li>
+<li>More flexible policies than RB-RBAC - can combine policies</li>
+<li>Policies can take advantage of object, subject, and environment attributes</li>
+<li>Can be formatted with control flow (<code>if .. else</code>)</li>
+</ul>
+<h2 id="best-practices-for-access-control">Best Practices for Access Control</h2>
+<h3 id="separation-of-duties">Separation of Duties</h3>
+<blockquote>
+<p>Two keys at opposite ends of a room to launch nuke</p>
+</blockquote>
+<p>If necessary process was operated fraudulently could cause catastrophic failure, then distribute operation of process to two or more parties</p>
+<h3 id="job-rotation">Job Rotation</h3>
+<ul>
+<li>Move individuals between job responsibilities</li>
+<li>Limits time for committed fraud, exposes avenues for fraud</li>
+<li>Reduces employee “burnout”</li>
+</ul>
+<h3 id="mandatory-vacations">Mandatory Vacations</h3>
+<ul>
+<li>Limits fraud, because perp needs to be present</li>
+<li>Audits usually scheduled during absence</li>
+</ul>
+<h3 id="clean-desk-policy">Clean Desk Policy</h3>
+<blockquote>
+<p>Ensures all confidential and sensitive material is secured when not in use</p>
+</blockquote>
+<ul>
+<li>computers are locked and turned off at end of day</li>
+<li>confidential documents are locked in desk</li>
+<li>keys for file cabinets are properly maintained</li>
+<li>use of locking cables</li>
+</ul>
+<h2 id="implementing-access-control">Implementing Access Control</h2>
+<ul>
+<li>ACL is attached to objects - system checks object ACL when subject performs operation
+<ul>
+<li>file permissions, SQL and relational databases</li>
+</ul></li>
+<li>Each <em>entry</em> - ACE</li>
+<li>ACE Windows structure:
+<ul>
+<li>SID for user, group, or logon session</li>
+<li>Access mask specifies access rights controlled by ACE</li>
+<li>Flag indicates type of ACE (allow / deny)</li>
+<li>Flags indicating inheritance of permissions (i.e. by folder structure)</li>
+</ul></li>
+</ul>
+<h3 id="group-based-access-control">Group-Based Access Control</h3>
+<blockquote>
+<p>Configures multiple computers by single security policy</p>
+</blockquote>
+<ul>
+<li>Windows Group Policy for users of Active Directory, settings stored in Group Policy Objects
+<ul>
+<li>Local Group Policy - fewer options, not for AD</li>
+</ul></li>
+</ul>
+<h3 id="identity-and-access-services">Identity and Access Services</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">RADIUS</th>
+<th style="text-align: left;">TACACS+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Transport Protocol</td>
+<td style="text-align: left;">UDP</td>
+<td style="text-align: left;">TCP</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Authentication &amp; Authorization</td>
+<td style="text-align: left;">Combined</td>
+<td style="text-align: left;">Separate</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Communication</td>
+<td style="text-align: left;">Unencrypted</td>
+<td style="text-align: left;">Encrypted</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Kerberos?</td>
+<td style="text-align: left;">Nope</td>
+<td style="text-align: left;">Yep!</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Network Devices?</td>
+<td style="text-align: left;">Nope :(</td>
+<td style="text-align: left;">Yep!</td>
+</tr>
+</tbody>
+</table>
+<h4 id="radius">RADIUS</h4>
+<blockquote>
+<p>Remote Authentication Dial In User Service</p>
+</blockquote>
+<ul>
+<li>1992</li>
+<li>Client typically a wireless AP</li>
+<li>Typically users are stored in central DB</li>
+<li>Advantages: Increased security due to single audit trail, easier billing and network stats</li>
+<li>XFINITY remote login?</li>
+<li>IEEE 802.1x port security</li>
+</ul>
+<h4 id="kerberos">Kerberos</h4>
+<ul>
+<li>Developed at MIT</li>
+<li>Crypto tickets</li>
+<li>Like using a driver’s license to cash a check</li>
+</ul>
+<h4 id="terminal-access-control-access-control-systems-tacacs">Terminal Access Control Access Control Systems+ (TACACS+)</h4>
+<ul>
+<li>Similar to RADIUS</li>
+<li>commonly used on UNIX</li>
+<li>central server</li>
+<li>current version is TACACS+</li>
+</ul>
+<h4 id="lightweight-directory-access-protocol-ldap">Lightweight Directory Access Protocol (LDAP)</h4>
+<ul>
+<li>Information about users and network devices</li>
+<li>Network resources and users’ privileges to those resources</li>
+<li><strong>X.500</strong> → defines DAP</li>
+<li>TCP/IP subset of DAP, simpler than X.500</li>
+<li>LDAPS - over SSL/TLS</li>
+<li>Susceptible to LDAP injection attacks (like SQL injection when input isn’t sanitized)</li>
+</ul>
+<h4 id="security-assertion-markup-language">Security Assertion Markup Language</h4>
+<ul>
+<li>XML, allows web domains to exchange user auth data</li>
+<li>used in e-commerce business-to-business and business-to-customer transactions</li>
+<li>3rd party identity providers</li>
+</ul>
+<h4 id="authentication-framework-protocols">Authentication framework protocols</h4>
+<p>More secure alternative to:</p>
+<ul>
+<li>Challenge-Handshake Authentication Protocol (CHAP)</li>
+<li>MS-CHAP</li>
+<li>Password Authentication Protocol (PAP)</li>
+</ul>
+<blockquote>
+<p>Extensible Authentication Protocol (EAP)</p>
+</blockquote>
+<ul>
+<li>Four packets - Request, Response, Success, Failure</li>
+</ul>

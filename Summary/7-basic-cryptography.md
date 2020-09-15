@@ -1,13 +1,15 @@
 Basic Cryptography
 ======================
 
-> Security through obscurity
+> Security through obscurity is a _fallacy_!
 
 - _substitution cipher_ ~ Cesarean cipher
 - _XOR cipher_ - XOR with some repeated "combinator"
 - _diffusion_ - small change in plaintext → large change in ciphertext
-- _confusion_ - key doesn't relate in simple way to ciphertext
+- _confusion_ - key/cleartext doesn't relate in simple way to ciphertext
 - _non-repudiation_ - proves that a user performed an action
+- _plaintext_ - data that is to be encrypted
+- _cleartext_ - data that has not yet been encrypted
 
 > Resource vs. Security Constraint
 
@@ -16,6 +18,13 @@ Basic Cryptography
 - Energy, Latency, Security all fight in a trifecta
 
 thus, there needs to be _high resiliency_ in crypto
+
+Four basic protections of crypto:
+
+- Authenticity
+- Confidentiality
+- Integrity
+- Non-Repudiation
 
 ## Crypto Algorithms
 
@@ -30,19 +39,23 @@ thus, there needs to be _high resiliency_ in crypto
 - Original
 - Secure
 
-| Algorithm   | Length        | Traits                |
-| :---------- | :------------ | :-------------------- |
-| MD5         | 512b          | Collisions, Weak      |
-| SHA-2       | 128, 256, 512 | Secure                |
-| SHA-3       |               | Latest SHA, Low-Power |
-| RIPEMD      | 128, 256, 320 | Parallel              |
-| HMAC        |               | Shared Key            |
+| Algorithm   | Length                            | Traits                |
+| :---------- | :------------                     | :-------------------- |
+| MD5         | 512b                              | Collisions, Weak      |
+| SHA-1       | 160b                              | Weak                  |
+| SHA-2       | 128 (9 r), 192 (11 r), 256 (13 r) | Secure                |
+| SHA-3       |                                   | Latest SHA, Low-Power |
+| RIPEMD      | 128, 256, 320                     | Parallel              |
+| HMAC        |                                   | Shared Key            |
 
 > RIPEMD - Race Integrity Primitives Evaluation Message Digest
 
 ### Symmetric Key Crypto
 
 > Private Key Cypto, Shared Key Crypto
+
+- comparatively fast
+- few computational requirements
 
 | Algorithm | Type   | Length                   | Traits                  |
 | :-------- | :----- | :----------------------  | :---------------------- |
@@ -51,6 +64,7 @@ thus, there needs to be _high resiliency_ in crypto
 | AES       | Block  | 128b plaintext, 192, 256 | NIST in 2000, Secure    |
 | RC-4 + BR | Stream | 56b, 128b Key            | Voice, Video, Streaming |
 | Rivest    |        |                          |                         |
+| Twofish   |        |                          |                         |
 | Blowfish  | Block  | 64b blocks, 32-448 keys  | No significant weakness |
 | IDEA      | Block  | 64b blocks, 128b Key     | 8 Rounds, EU            |
 
@@ -60,6 +74,16 @@ thus, there needs to be _high resiliency_ in crypto
 >
 > IDEA - International Data Encryption Algorithm
 
+#### Modes of Operation
+
+> What if two blocks have the same plaintext? You would see the same blocks of ciphertext
+
+- Electronic Code Book (ECB)
+- Cipher Block Chaining (CBC)
+- Cipher Feedback Mode (CFM)
+- Output Feedback Mode (OFM)
+- Counter Mode (CTR)
+
 ### Asymmetric Key Cypto
 
 > Public Key Crypto
@@ -68,12 +92,17 @@ thus, there needs to be _high resiliency_ in crypto
 | :-------- | :--------------------------------------- |
 | RSA       | Prime Numbers, 1997 MIT, Most Common     |
 | ECC       | Elliptic Curve, Less Power, Smaller Keys |
-| DSA       | Digital Signatures                       |
+| DSA       | Digital Signatures, U.S. Fed Standard    |
+
+- _perfect forward secrecy_ - random public keys for each session
 
 ### Key Exchange
 
 > Diffie-Hellman
 
+- DH
+  - Uses same keys each time
+  - agree on large prime number and related integer
 - DH Ephemeral
 - Elliptic Curve DH
 
@@ -93,5 +122,5 @@ thus, there needs to be _high resiliency_ in crypto
 - Hardware Encryption - trusted platform module, hardware security model
   - password-protected flash drives
   - self-encrypting drives (SED)
-  - TPM - true random numbers, built in motherboard
+  - TPM - true random numbers & other crypto services, built in motherboard / hardware
   - HSM - onboard keygen and storage

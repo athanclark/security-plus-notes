@@ -1,0 +1,247 @@
+<h1 id="network-security-devices-design-and-technology">Network Security Devices, Design, and Technology</h1>
+<blockquote>
+<p>A degree of security can be achieved with standard security features, and proper hardware orientation, but improper configuration can introduce vulnerabilities</p>
+</blockquote>
+<p><strong>OSI Model:</strong></p>
+<ul>
+<li>7 layers (like dip)</li>
+<li>each has different networking tasks</li>
+<li>each cooperates with adjacent layers</li>
+</ul>
+<hr />
+<h2 id="devices">Devices</h2>
+<h3 id="bridges">Bridges</h3>
+<blockquote>
+<p>1-to-1 connection between two networks (operates at layer 2, ethernet)</p>
+</blockquote>
+<ul>
+<li>most OSs allow a software bridge - i.e. to share a network connection, but can introduce vulnerabilities</li>
+</ul>
+<h3 id="switches">Switches</h3>
+<ul>
+<li>layer 3 switches (smart switch)</li>
+<li>can learn which device is connected at each port (ARP), inspects MAC address of frames to store in MAC table</li>
+<li>forwards frames intended for a specific device rather than broadcast like a hub</li>
+<li>proper configuration includes loop prevention and flood guards (port security)</li>
+<li>port security limits the number of MAC addresses linked to a port</li>
+</ul>
+<h3 id="routers">Routers</h3>
+<ul>
+<li>forward packets across different networks (layer 3)</li>
+<li>can filter traffic with access control lists</li>
+<li>can blacklist networks</li>
+</ul>
+<h3 id="load-balancers">Load Balancers</h3>
+<ul>
+<li>distributes work over multiple devices</li>
+<li>reduces chance of overload, and increases bandwidth of service</li>
+<li>software or hardware based</li>
+<li>layer 4 (network &amp; transport layers) or layer 7 (application layer - HTTP)</li>
+<li>different scheduling mechanisms - round-robin, affinity, other</li>
+</ul>
+<h3 id="proxies">Proxies</h3>
+<ul>
+<li><em>forward proxy</em> - relays requests on behalf of the user</li>
+<li><em>application / multipurpose proxy</em> - specific protocols</li>
+<li><em>reverse proxy</em> - routes requests coming in to correct internal server (load balancing?)</li>
+<li><em>transparent proxy</em> - does not require any user configuration - manipulates packages &amp; headers</li>
+</ul>
+<p>Advantages:</p>
+<ul>
+<li>increases speed</li>
+<li>reduces tech costs</li>
+<li>improved management</li>
+<li>stronger security</li>
+</ul>
+<hr />
+<h2 id="hardware">Hardware</h2>
+<blockquote>
+<p>Provide greater security than standard devices</p>
+</blockquote>
+<h3 id="firewalls">Firewalls</h3>
+<blockquote>
+<p>inspect packets and accept or deny entry - “allow”, “drop”, “reject”</p>
+</blockquote>
+<ul>
+<li>software or hardware based</li>
+<li>hardware firewalls are harder to configure and are more expensive</li>
+<li>software firewalls only protect that device, host-based firewall</li>
+<li>stateless packet filtering - individual packets are approved by rules</li>
+<li>stateful packet filtering - keeps a record of state per connection, makes decisions based on connection &amp; decisions</li>
+<li>rule-based firewalls have a decision graph, but are static in nature</li>
+<li>application-aware firewalls operate at a higher level
+<ul>
+<li>predefined application signatures, header inspection, payload analysis</li>
+<li>web application firewalls inspect HTTP</li>
+</ul></li>
+</ul>
+<h3 id="virtual-private-network-vpn">Virtual Private Network (VPN)</h3>
+<blockquote>
+<p>all transmitted data between host and VPN is encrypted</p>
+</blockquote>
+<ul>
+<li><em>remote-access VPN</em> - user-to-LAN</li>
+<li><em>site-to-site</em> - between hosts on the WWW</li>
+<li><em>always-on VPN</em> - allow the user to always stay connected</li>
+<li>endpoint may be software on a computer (OpenVPN) or a VPN concentrator
+<ul>
+<li>dedicated hardware that aggregates hundreds or thousands of VPN connections</li>
+</ul></li>
+<li>full tunnel (all traffic is routed) vs. split tunnel (only some traffic)</li>
+</ul>
+<h3 id="mail-gateway">Mail Gateway</h3>
+<ul>
+<li>SMTP (sending), POP/POP3 (downloads inbox), IMAP (mail remains on server)</li>
+<li>monitors for and rejects unwanted mail
+<ul>
+<li>inbound can be searched for malware, spam, and phishing</li>
+<li>outbound can be searched for sensitive data</li>
+</ul></li>
+</ul>
+<h3 id="network-intrusion-detection-and-prevention">Network Intrusion Detection and Prevention</h3>
+<blockquote>
+<p>Intrusion Detection System (IDS)</p>
+</blockquote>
+<ul>
+<li><em>Inline IDS</em> acts like a bridge to your network
+<ul>
+<li>can block attacks, but can block service</li>
+</ul></li>
+<li><em>Passive IDS</em> connects to a port on your switch, and gets a copy of the traffic
+<ul>
+<li>can’t block attacks, but can at most cause false alarms</li>
+</ul></li>
+<li>can be configured in-band (via network protocols in its own network), or out-of-band via remote access</li>
+<li><strong>Host Intrusion Detection System (HIDS)</strong>
+<ul>
+<li>monitors system calls and file system access</li>
+<li>recognizes unauthorized registry modification</li>
+<li>watches for shifty I/O</li>
+<li>can’t watch network traffic, only local traffic</li>
+<li>all log data is local</li>
+<li>resource intensive</li>
+</ul></li>
+<li><strong>Network Intrusion Detection System (NIDS)</strong>
+<ul>
+<li>installed on firewalls &amp; routers</li>
+<li>can sound alarm &amp; log events</li>
+</ul></li>
+<li>Application-aware IDS
+<ul>
+<li>uses contextual knowledge in real time</li>
+<li>it can know OS versions &amp; which applications are running, and what vulnerabilities are present</li>
+</ul></li>
+</ul>
+<h4 id="monitoring">Monitoring</h4>
+<ul>
+<li>anomaly-based compared to some baseline</li>
+<li>signature-based compared to well-known attacks</li>
+<li>behavior-based by watching abnormal actions of processes and programs - alerts user</li>
+<li>heuristic monitoring via experience-based techniques</li>
+</ul>
+<h3 id="intrusion-prevention-system">Intrusion Prevention System</h3>
+<ul>
+<li>Monitors traffic to immediately block attacks</li>
+<li>similar to NIDS, NIPS is inline to the firewall</li>
+<li>application-aware IPSs exist</li>
+</ul>
+<h3 id="security-and-information-event-management-siem">Security and Information Event Management (SIEM)</h3>
+<ul>
+<li>Real-time monitoring and aggregation for reports</li>
+<li>Can be a separate device, software, or a 3rd party</li>
+<li>Aggregation, correlation, automated alerts and triggers, time sync, event duplication, logs</li>
+</ul>
+<h3 id="hardware-security-module">Hardware Security Module</h3>
+<blockquote>
+<p>For storing crypto keys</p>
+</blockquote>
+<h3 id="ssl-decrypter">SSL Decrypter</h3>
+<h3 id="ssltls-accelerator">SSL/TLS Accelerator</h3>
+<blockquote>
+<p>Card installed into web server</p>
+</blockquote>
+<h3 id="media-gateway">Media Gateway</h3>
+<blockquote>
+<p>Translates between different media types - a “soft switch”</p>
+</blockquote>
+<h3 id="unified-threat-management-utm">Unified Threat Management (UTM)</h3>
+<blockquote>
+<p>Antispam, antiphishing, antispyware, encryption, intrusion protection, web filtering</p>
+</blockquote>
+<h3 id="internet-content-filter">Internet Content Filter</h3>
+<blockquote>
+<p>Restricts based on keywords</p>
+</blockquote>
+<h3 id="web-security-gateway">Web Security Gateway</h3>
+<blockquote>
+<p>Application-level content examination</p>
+</blockquote>
+<hr />
+<h2 id="network-architecture">Network Architecture</h2>
+<blockquote>
+<p>Network design can make a system more robust, by utilizing security zones and network segregation</p>
+</blockquote>
+<ul>
+<li>One zone may be permitted to users, while sensitive access is not permitted, partly because it’s on a different network
+<ul>
+<li>common examples: demilitarized zones, NAT (network address translation)</li>
+</ul></li>
+<li>DMZ is “outside” the secure network - untrusted users can access DMZ</li>
+<li>NAT masks IP addresses of <strong>one</strong> private user
+<ul>
+<li>PAT masks a series of private IP addresses, and maps them to different ports on the public IP</li>
+</ul></li>
+</ul>
+<p><strong>Terms</strong>:</p>
+<ul>
+<li><em>Intranet</em> - a private network internal to an organization</li>
+<li><em>Extranet</em> - a private network 3rd parties can operate on</li>
+<li><em>Guest Network</em> - a public network</li>
+</ul>
+<h3 id="types-of-network-segregation">Types of Network Segregation</h3>
+<ul>
+<li><em>Physical Network Segregation</em> - isolates network physically with an air Gap - No connection between private and other network</li>
+<li>Network Hierarchy - core switches at the top, workgroup switches at the bottom</li>
+<li>Virtual LAN - logical grouping, but potentially sparse hosts
+<ul>
+<li>special tagging for different switches operating under the same VLANs - proprietary implementations, or IEEE 802.1Q</li>
+</ul></li>
+</ul>
+<h3 id="methods-for-securing-a-network">Methods for securing a network</h3>
+<h4 id="network-access-control">Network Access Control</h4>
+<ul>
+<li>prevents suboptimally secure hosts from connecting to main network - may quarantine them</li>
+<li><em>host agent health checks</em> - either permanent or dissolvable</li>
+<li>can be embedded in Microsoft Windows Active Directory domain controller</li>
+<li>if AD scans the device, it’s “agentless”</li>
+<li>quarantine is based on <em>health certificates</em> generated by a <em>health registry authority</em></li>
+</ul>
+<h4 id="data-loss-prevention">Data Loss Prevention</h4>
+<blockquote>
+<p><strong>content inspection</strong> - security analysis of the transaction within its approved context</p>
+</blockquote>
+<ul>
+<li>common uses include monitoring emails, and blocking flash drives from copying files</li>
+<li>operates by content inspection</li>
+<li>looks at:
+<ul>
+<li>security level of content</li>
+<li>who’s requesting it</li>
+<li>where it’s stored</li>
+<li>when it was requested</li>
+<li>where it is going</li>
+</ul></li>
+<li>three types of DLP sensors:
+<ul>
+<li><em>DLP network sensors</em></li>
+<li><em>DLP storage sensors</em></li>
+<li><em>DLP agent sensors</em></li>
+</ul></li>
+<li>policy violations are reported by <em>DLP agent</em> to <em>DLP server</em>
+<ul>
+<li>can block data</li>
+<li>redirect request to authoritative individual to examine request</li>
+<li>quarantine the data until later</li>
+<li>alert a supervisor</li>
+</ul></li>
+</ul>

@@ -1,0 +1,186 @@
+<h1 id="client-and-application-security">Client and Application Security</h1>
+<blockquote>
+<p>Proper use of machine hardware security systems, securing the operating system, and protecting peripheral devices.</p>
+</blockquote>
+<h2 id="hardware-system-security">Hardware System Security</h2>
+<p>Supply Chain Infections are difficult to determine, and revert - it’s virtually impossible to monitor every step.</p>
+<h3 id="secure-boot">Secure Boot</h3>
+<ul>
+<li>BIOS can be updated with malware</li>
+<li>UEFI replaced BIOS to combat attacks, with <strong>secure boot</strong> - checking the signature of the boot sequence</li>
+</ul>
+<blockquote>
+<p>BIOS/UEFI → Master Boot Record → Boot Loader → Operating System</p>
+</blockquote>
+<h3 id="hardware-root-of-trust">Hardware Root of Trust</h3>
+<blockquote>
+<p>Each successive process of the boot sequence relies on the previous for security</p>
+</blockquote>
+<p>Hardware being the root.</p>
+<ul>
+<li><em>Shimming</em> - a middleman between the kernel and driver</li>
+</ul>
+<h3 id="preventing-elecromagnetic-spying">Preventing ElecroMagnetic Spying</h3>
+<p>Telecommunications Electronics Material Protected from Emanating Spurious Transmissions (TEMPEST)</p>
+<blockquote>
+<p>A classified standard to prevent attackers from picking up ambient readings</p>
+</blockquote>
+<h3 id="protected-distribution-system-pds">Protected Distribution System (PDS)</h3>
+<ul>
+<li><em>hardened carrier PDS</em> - special, strengthened electrical tubing</li>
+<li><em>alarmed carrier PDS</em> - fiber optics that sense acoustic vibrations
+<ul>
+<li>Uses continuous monitoring</li>
+<li>Carrier can be hidden above the ceiling</li>
+<li>Eliminates the need to seal connections</li>
+</ul></li>
+</ul>
+<hr />
+<h2 id="securing-operating-systems">Securing Operating Systems</h2>
+<ul>
+<li>Network OS - Cisco IOS, Juniper JUNOS, MikroTik, RouterOS</li>
+<li>Server OS - Windows Server, macOS Server, Red Hat</li>
+<li>Workstation OS - Windows, macOS, Ubuntu</li>
+<li>Appliance OS - Linpus Linux</li>
+<li>Kiosk OS - Windows, Chrome, iOS, WebKiosk, KioWare (Android)</li>
+<li>Mobile OS - Android, iOS, Windows Mobile</li>
+</ul>
+<h3 id="security-configuration">Security Configuration</h3>
+<ul>
+<li>Disable unnecessary ports and services</li>
+<li>Disabling default accounts &amp; passwords</li>
+<li>Employ “least functionality”</li>
+<li>Application whitelisting / blacklisting</li>
+<li>Use tools to automate the configuration process
+<ul>
+<li>Windows can use “security templates”</li>
+</ul></li>
+</ul>
+<blockquote>
+<p><em>group policy</em> - single configuration to be set and distributed to many / all users.</p>
+</blockquote>
+<h3 id="patch-management">Patch Management</h3>
+<ul>
+<li>security patches repair a discovered vulnerability</li>
+<li>feature updates enhances software, but doesn’t address security flaws</li>
+<li>service packs combine both</li>
+<li>automated patch update services manage patches in a local network, rather than using a 3rd party system
+<ul>
+<li>admins can approve or deny patches, and check to see what hosts can actually use them</li>
+</ul></li>
+<li>MS forces security updates now</li>
+</ul>
+<h3 id="antimalware">Antimalware</h3>
+<blockquote>
+<p>Includes antivirus, antispyware, antispam</p>
+</blockquote>
+<h4 id="antivirus">Antivirus</h4>
+<ul>
+<li>Searches for known patterns in new documents</li>
+<li>Vendor must update and distribute new signature files</li>
+<li>Heuristic Monitoring as a new style - variety of techniques, including code emulation</li>
+</ul>
+<h4 id="antispam">Antispam</h4>
+<ul>
+<li>Basically just a mail gateway</li>
+<li>Whitelists and blacklists</li>
+<li>block certain file types</li>
+<li>Bayesian filtering</li>
+</ul>
+<h4 id="antispyware">Antispyware</h4>
+<ul>
+<li>Popup blockers</li>
+</ul>
+<h3 id="trusted-os">Trusted OS</h3>
+<ul>
+<li>OS hardening, though thorough speculation of code</li>
+<li>Least privilege - remove willy-nilly admin access</li>
+<li>Reduce capabilities - restrict what resources can be accessed</li>
+<li>Read-only filesystems - important OS files can’t be changed</li>
+<li>Kernel pruning - remove unnecessary features</li>
+</ul>
+<h2 id="peripheral-security">Peripheral Security</h2>
+<h3 id="sd-card-readers">SD card readers</h3>
+<ul>
+<li>Secure Digital Input Output (SDIO) Cards</li>
+<li>Four families - SDSC, SDHC, SDXC, SDIO</li>
+<li>SDIO has wireless transmission built-in via WiFi</li>
+</ul>
+<h3 id="cameras">Cameras</h3>
+<ul>
+<li>three types of speed classes - standard speed, ultra-high speed UHS, video speed</li>
+<li>password-protect the card, use encryption, write-protect the card</li>
+</ul>
+<h3 id="external-storage">External storage</h3>
+<ul>
+<li>at-risk to crypto-malware</li>
+</ul>
+<h3 id="multifunction-devices">Multifunction devices</h3>
+<ul>
+<li>printer, copier, scanner, fax-machine</li>
+<li>configure to purge stored images</li>
+<li>link to data-loss prevention</li>
+<li>secure-job release for paper-based theft</li>
+<li>use watermarks</li>
+</ul>
+<h3 id="displays">Displays</h3>
+<ul>
+<li>firmware could be attacked</li>
+</ul>
+<h2 id="physical-security">Physical Security</h2>
+<h3 id="external-perimeter-defenses">External perimeter defenses</h3>
+<ul>
+<li>barriers, guards, motion detection, rolling barrier, type V controls FIXME</li>
+<li>fencing, cages, bollards</li>
+<li>Barricades are meant to direct traffic flow, not prevent access</li>
+</ul>
+<h3 id="internal-physical-access-security">Internal physical access security</h3>
+<ul>
+<li>door locks, access logs, mantraps, protected cabling distribution systems
+<ul>
+<li>cipher locks for date/time codes</li>
+<li><em>keyed entry locks</em> are most common</li>
+</ul></li>
+<li>Security for protecting hardware devices</li>
+<li>Closed Circuit Television (CCTV)</li>
+</ul>
+<h2 id="application-development-security">Application Development Security</h2>
+<h3 id="memory-vulnerabilities">Memory Vulnerabilities</h3>
+<ul>
+<li>buffer overflow</li>
+<li>DLL injection</li>
+<li>pointer dereferences</li>
+</ul>
+<h3 id="stages">Stages</h3>
+<ul>
+<li>Development</li>
+<li>Testing</li>
+<li>Staging - “quality assurance”</li>
+<li>Production</li>
+</ul>
+<blockquote>
+<p>Waterfall vs. Agile</p>
+</blockquote>
+<h3 id="devops">DevOps</h3>
+<ul>
+<li>security automation</li>
+<li>continuous integration</li>
+<li>immutable systems</li>
+<li>infrastructure as code</li>
+<li>baselining</li>
+<li>based on agile</li>
+<li>Provisioning - puppet</li>
+</ul>
+<h3 id="methodologies">Methodologies</h3>
+<ul>
+<li>model verification</li>
+<li>compiled code testing</li>
+<li>runtime code testing</li>
+<li>static program analyzers</li>
+<li>dynamic analysis (fuzzing)
+<ul>
+<li>randomized inputs</li>
+</ul></li>
+<li>stress testing</li>
+<li>integrity measurements</li>
+</ul>

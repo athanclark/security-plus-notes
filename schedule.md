@@ -1,9 +1,9 @@
 ## Chapter 1, 2
 
-- [x] PowerPoint Chapter 1
-- [x] Review
-- [x] PowerPoint Chapter 2
-- [x] Review
+- [x] PowerPoint Chapter 1 - 16 / 50
+- [x] Review - 5 / 20
+- [x] PowerPoint Chapter 2 - 8 / 50
+- [x] Review - ~~0 / 20~~
 
 - [x] Book Chapter 1
 - [x] Book Chapter 2
@@ -11,21 +11,21 @@
 
 ## Chapter 5, 6
 
-- [x] PowerPoint Chapter 5
-- [x] Review
-- [x] PowerPoint Chapter 6
-- [x] Review
+- [x] PowerPoint Chapter 5 - 9 / 50
+- [x] Review - 2 / 20
+- [x] PowerPoint Chapter 6 - 8 / 50
+- [x] Review - 5 / 20
 
 - [x] Book Chapter 6
-- [ ] Book Chapter 7
+- [x] Book Chapter 7
 - [ ] Book Chapter 11
 
 ## Chapter 9, 13
 
-- [x] PowerPoint Chapter 9
-- [x] Review
-- [x] PowerPoint Chapter 13
-- [x] Review
+- [x] PowerPoint Chapter 9 - 13 / 50
+- [x] Review - 7 / 20
+- [x] PowerPoint Chapter 13 - 15 / 50
+- [x] Review - 3 / 20
 
 - [ ] Book Chapter 4
 - [ ] Book Chapter 5
@@ -35,10 +35,10 @@
 
 ## Chapter 3, 4
 
-- [x] PowerPoint Chapter 3
-- [ ] Review
-- [x] PowerPoint Chapter 4
-- [ ] Review
+- [x] PowerPoint Chapter 3 - ~~9 / 50~~
+- [x] Review - ~~5 / 20~~
+- [x] PowerPoint Chapter 4 - ~~14 / 50~~
+- [x] Review - ~~3 / 20~~
 
 - [ ] Book Chapter 26
 - [ ] Book Chapter 27
@@ -47,9 +47,9 @@
 
 ## Chapter 8, 10
 
-- [x] PowerPoint Chapter 8
+- [x] PowerPoint Chapter 8 - ~~26 / 50~~
 - [ ] Review
-- [x] PowerPoint Chapter 10
+- [x] PowerPoint Chapter 10 - 11 / 50
 - [ ] Review
 
 - [ ] Book Chapter 9
@@ -57,9 +57,9 @@
 
 ## Chapter 7, 12
 
-- [ ] PowerPoint Chapter 7
+- [x] PowerPoint Chapter 7 - 16 / 50
 - [ ] Review
-- [ ] PowerPoint Chapter 12
+- [x] PowerPoint Chapter 12 - 16 / 50
 - [ ] Review
 
 - [ ] Book Chapter 8
@@ -70,7 +70,7 @@
 
 ## Chapter 11, 14
 
-- [ ] PowerPoint Chapter 11
+- [x] PowerPoint Chapter 11 - 14 / 50
 - [ ] Review
 - [ ] PowerPoint Chapter 14
 - [ ] Review

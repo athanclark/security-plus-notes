@@ -1,0 +1,74 @@
+<h1 id="advanced-cryptography-and-pki">Advanced Cryptography and PKI</h1>
+<ul>
+<li><em>crypto service provider</em> - calls crypto functions as a service</li>
+<li><em>digital certificate</em> - associates a user’s <em>identity</em> with their public key</li>
+<li><em>master secret</em> - used to derive session keys</li>
+<li>A <em>Cipher Suite</em> is the combination of encryption, signing, and hashing algorithms supported</li>
+</ul>
+<p>Three characteristics of <em>key strength</em>:</p>
+<ul>
+<li>randomness</li>
+<li>length</li>
+<li>cryptoperiod - expiration</li>
+</ul>
+<blockquote>
+<p>Need to explore about half of keyspace in order to break</p>
+</blockquote>
+<p>Block Cipher Modes of Operation:</p>
+<ul>
+<li>Electronic Code Block (ECB)
+<ul>
+<li>Each plaintext block is ciphered separately - orthogonal map</li>
+</ul></li>
+<li>Cipher Block Chaining (CBC)
+<ul>
+<li>Block is ciphered, ciphertext is XORd with next plaintext block</li>
+</ul></li>
+<li>Counter (CTR)</li>
+<li>Galios / Counter (GCM)
+<ul>
+<li>Encrypts the plaintext and includes an encrypted MAC</li>
+</ul></li>
+</ul>
+<h2 id="pki">PKI</h2>
+<ul>
+<li><em>Certificate Authorities</em> issue digital certificates
+<ul>
+<li>They may be arranged <em>heirarchical</em> (one master / root, self-signed CA)</li>
+<li><em>distributed</em> (tree of CAs)</li>
+<li><em>bridge</em> - link between multiple CA networks, with one acting as a <em>facilitator</em></li>
+</ul></li>
+<li><em>Certificate Repositories</em> manage a centralized directory of digital certificates</li>
+<li><em>Certificate Revocation Lists</em> declare what certificates are no longer (or temporarily) invalid</li>
+<li><em>Online Certificate Status Protocol</em> (OCSP) checks a cert’s status</li>
+<li><em>Extended Validation Certificates</em> showcase the name of the company, as further trust. FIXME</li>
+<li><em>Certificate Policies</em> are a set of rules that govern the operation of PKI</li>
+<li><em>Certificate Signing Request</em> (CSR) - how someone associates their identity to their public key</li>
+<li><em>Subject Alternative Name</em> (SAN) / <em>Unified Communications Certificate</em> (UCC) - an extension to a certificate to include one or more domain names, or a user principal name (UPN), for added identity authenticity.</li>
+<li><em>Web-Client Certificates</em> ensure for a web-browser that a web-server is authentic w.r.t. their domain.</li>
+<li><em>Certificate Practice Statement</em> (CPS) is a document detailing how a CA manages its certificates, and how to register for one</li>
+<li><em>Domain Validation Digital Certificate</em> - validates control over the domain name</li>
+<li><em>Extended Validation</em> - Allows enhancing the certificate with the company name for further validation</li>
+<li><em>destruction</em> - removing affiliation with a certificate, and private / public keys</li>
+</ul>
+<p>Four stages of certificate life cycle:</p>
+<ul>
+<li>Creation</li>
+<li>Suspension</li>
+<li>Revocation</li>
+<li>Expiration</li>
+</ul>
+<blockquote>
+<p>Distributed trust is the basis for most trust models on the internet, but there exists others as well, including 3rd-party trust models.</p>
+</blockquote>
+<ul>
+<li>A distributed CA model, where only one CA facilitates all other CAs is considered a 3rd party trust model.</li>
+</ul>
+<h2 id="ipsec">IPSec</h2>
+<ul>
+<li>Authentication Header - Integrity</li>
+<li>Encapsulating Security Payload - Confidentiality</li>
+<li><em>transparent</em> - nobody has to install anything to use it</li>
+<li>useful for VPNs</li>
+<li>manages Authentication, Confidentiality, and Key-Management</li>
+</ul>
