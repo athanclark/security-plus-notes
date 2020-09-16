@@ -7,9 +7,20 @@
 <li><em>XOR cipher</em> - XOR with some repeated “combinator”</li>
 <li><em>diffusion</em> - small change in plaintext → large change in ciphertext</li>
 <li><em>confusion</em> - key/cleartext doesn’t relate in simple way to ciphertext</li>
-<li><em>non-repudiation</em> - proves that a user performed an action</li>
+<li><em>non-repudiation</em>
+<ul>
+<li>proves that a user performed an action</li>
+<li>private keys are never seen by others, if so, they’re revoked</li>
+<li>“actions that are signed cannot be repudiated by the holder”; <em>they</em> signed it</li>
+</ul></li>
 <li><em>plaintext</em> - data that is to be encrypted</li>
 <li><em>cleartext</em> - data that has not yet been encrypted</li>
+<li><em>ephemeral keys</em> - keys used only once</li>
+<li><em>perfect forward secrecy</em> - key derived from another isn’t compromised, if the parent is</li>
+<li><em>differential cryptanalysis</em> - compares plaintext to ciphertext to determine the key</li>
+<li><em>linear cryptanalysis</em> - uses a simplified cipher to generate new ciphertext from plaintext, and compares to actual ciphertext to better estimate key</li>
+<li><em>key stretching</em> - the act of increasing the keyspace of a cipher, usually through multiple rounds</li>
+<li><em>key exchange</em> - the act of sharing a secret key - implementations can use asymmetric encryption to share, or derive it with DH</li>
 </ul>
 <blockquote>
 <p>Resource vs. Security Constraint</p>
@@ -51,27 +62,27 @@
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">MD5</td>
-<td style="text-align: left;">512b</td>
+<td style="text-align: left;">128b, 512b block</td>
 <td style="text-align: left;">Collisions, Weak</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">SHA-1</td>
-<td style="text-align: left;">160b</td>
+<td style="text-align: left;">160b, 512b block</td>
 <td style="text-align: left;">Weak</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">SHA-2</td>
-<td style="text-align: left;">128 (9 r), 192 (11 r), 256 (13 r)</td>
+<td style="text-align: left;">224b, 256b, 384b, 512b</td>
 <td style="text-align: left;">Secure</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">SHA-3</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">arbitrary</td>
 <td style="text-align: left;">Latest SHA, Low-Power</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">RIPEMD</td>
-<td style="text-align: left;">128, 256, 320</td>
+<td style="text-align: left;">128, 160, 256, 320</td>
 <td style="text-align: left;">Parallel</td>
 </tr>
 <tr class="even">
@@ -88,7 +99,17 @@
 <blockquote>
 <p>Private Key Cypto, Shared Key Crypto</p>
 </blockquote>
+<ul>
+<li>comparatively fast</li>
+<li>few computational requirements</li>
+</ul>
 <table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 9%" />
+<col style="width: 37%" />
+<col style="width: 37%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Algorithm</th>
@@ -117,22 +138,22 @@
 <td style="text-align: left;">NIST in 2000, Secure</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">RC-4 + BR</td>
+<td style="text-align: left;">RC4 + BR</td>
 <td style="text-align: left;">Stream</td>
-<td style="text-align: left;">56b, 128b Key</td>
-<td style="text-align: left;">Voice, Video, Streaming</td>
+<td style="text-align: left;">56b block, 128b Key</td>
+<td style="text-align: left;">Voice, Video, Streaming, weak IV, used in WEP</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Rivest</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">Blowfish</td>
 <td style="text-align: left;">Block</td>
 <td style="text-align: left;">64b blocks, 32-448 keys</td>
-<td style="text-align: left;">No significant weakness</td>
+<td style="text-align: left;">16 rounds, No significant weakness</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Twofish</td>
+<td style="text-align: left;">Block</td>
+<td style="text-align: left;">128b blocks, -256b keys</td>
+<td style="text-align: left;">Stronger than Blowfish</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">IDEA</td>
@@ -147,10 +168,146 @@
 <p>AES - Advanced Encryption Standard</p>
 <p>IDEA - International Data Encryption Algorithm</p>
 </blockquote>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Block</th>
+<th style="text-align: left;">Stream</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">More Memory</td>
+<td style="text-align: left;">Faster</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stronger</td>
+<td style="text-align: left;">Difficult to make Correct</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">High diffusion</td>
+<td style="text-align: left;">Low Diffusion</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Resistant to insert / modify</td>
+<td style="text-align: left;">Susceptible to insert / modify</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Susceptible to error propagation</td>
+<td style="text-align: left;">Resistant to error propagation</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Grants authenticity or integrity</td>
+<td style="text-align: left;">Can’t prove authenticity or integrity</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3DES, AES</td>
+<td style="text-align: left;">A5, RC4</td>
+</tr>
+</tbody>
+</table>
+<h4 id="modes-of-operation">Modes of Operation</h4>
+<blockquote>
+<p>What if two blocks have the same plaintext? You would see the same blocks of ciphertext</p>
+</blockquote>
+<ul>
+<li>Electronic Code Book (ECB)
+<ul>
+<li>Simplest, each block is encrypted separately</li>
+</ul></li>
+<li>Cipher Block Chaining (CBC)
+<ul>
+<li>XOR with previous block, IV for first cipher</li>
+<li>Cannot be parallelized</li>
+</ul></li>
+<li>Cipher Feedback Mode (CFM)</li>
+<li>Output Feedback Mode (OFM)</li>
+<li>Counter Mode (CTR / CTM)
+<ul>
+<li>generates nonce for each block</li>
+<li>encrypts nonce, then XOR with plaintext</li>
+<li>Can be parallelized</li>
+</ul></li>
+<li>Galois Counter Mode (GCM)
+<ul>
+<li>CTM with Galois mode of authentication</li>
+<li>Can be parallelized</li>
+<li>802.1ad 802.1AE</li>
+<li>AES-GCM and GMAC recognized by NIST</li>
+</ul></li>
+</ul>
 <h3 id="asymmetric-key-cypto">Asymmetric Key Cypto</h3>
 <blockquote>
 <p>Public Key Crypto</p>
 </blockquote>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Algorithm</th>
+<th style="text-align: left;">Functions</th>
+<th style="text-align: left;">Traits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">RSA</td>
+<td style="text-align: left;">Encryption, Signatures</td>
+<td style="text-align: left;">Prime Numbers, 1997 MIT, Most Common</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ECC</td>
+<td style="text-align: left;">Encryption, Signatures</td>
+<td style="text-align: left;">Elliptic Curve, Less Power, Smaller Keys</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">DSA (ElGamal)</td>
+<td style="text-align: left;">Signatures</td>
+<td style="text-align: left;">Digital Signatures, U.S. Fed Standard</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">PGP/GPG</td>
+<td style="text-align: left;">Encryption, Signatures</td>
+<td style="text-align: left;">Symantec, uses both Asymmetric and Symmetric</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Diffe-Hellman</td>
+<td style="text-align: left;">Key Exchange</td>
+<td style="text-align: left;">Doesn’t Encrypt</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><em>perfect forward secrecy</em> - random public keys for each session</li>
+</ul>
+<h3 id="diffie-hellman">Diffie-Hellman</h3>
+<ul>
+<li>DH Groups
+<ul>
+<li>the keyspace, basically</li>
+</ul></li>
+<li>DH
+<ul>
+<li>Uses same keys each time</li>
+<li>agree on large prime number and related integer</li>
+</ul></li>
+<li>DH Ephemeral
+<ul>
+<li>aka Ephemeral Diffe-Hellman (EDH / DHE)</li>
+<li>key generated used only once (popular for session keys)</li>
+<li>provides perfect forward secrecy</li>
+</ul></li>
+<li>Elliptic Curve DH (ECDH)
+<ul>
+<li>Works with ECC</li>
+<li>Ephemeral variant ECDHE</li>
+</ul></li>
+</ul>
+<h3 id="key-stretching">Key Stretching</h3>
 <table>
 <thead>
 <tr class="header">
@@ -160,35 +317,15 @@
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">RSA</td>
-<td style="text-align: left;">Prime Numbers, 1997 MIT, Most Common</td>
+<td style="text-align: left;">BCRYPT</td>
+<td style="text-align: left;">Uses Blowfish</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">ECC</td>
-<td style="text-align: left;">Elliptic Curve, Less Power, Smaller Keys</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">DSA</td>
-<td style="text-align: left;">Digital Signatures, U.S. Fed Standard</td>
+<td style="text-align: left;">PBKDF2</td>
+<td style="text-align: left;">HMAC, thousands of times</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li><em>perfect forward secrecy</em> - random public keys for each session</li>
-</ul>
-<h3 id="key-exchange">Key Exchange</h3>
-<blockquote>
-<p>Diffie-Hellman</p>
-</blockquote>
-<ul>
-<li>DH
-<ul>
-<li>Uses same keys each time</li>
-<li>agree on large prime number and related integer</li>
-</ul></li>
-<li>DH Ephemeral</li>
-<li>Elliptic Curve DH</li>
-</ul>
 <h2 id="attacks">Attacks</h2>
 <ul>
 <li>Knowledge of underlying plaintext language - i.e. English</li>
@@ -197,6 +334,11 @@
 <li>Management Frames - TCP/IP has a structure</li>
 <li>Collision Attack</li>
 <li>Birthday Attack</li>
+<li>Padding Oracle On Downgraded Legacy Encryption (POODLE)
+<ul>
+<li>CBC attack</li>
+<li>change in one bit of ciphertext block causes next block to be whacked, with bit inverted, and rest of the blocks good-to-go</li>
+</ul></li>
 </ul>
 <h2 id="file-system-encryption">File System Encryption</h2>
 <ul>

@@ -1,0 +1,143 @@
+<h1 id="business-continuity">Business Continuity</h1>
+<h2 id="business-continuity-planning-bcp"><em>Business Continuity Planning</em> (BCP)</h2>
+<ul>
+<li>Identifying exposure to threats</li>
+<li>Creating preventative and recovery procedures</li>
+<li>Testing them to see if they’re sufficient</li>
+</ul>
+<p>consists of 3 factors:</p>
+<ul>
+<li>Business Recovery Planning</li>
+<li>Crisis Management and Communications</li>
+<li>Disaster Recovery</li>
+</ul>
+<h2 id="business-impact-analysis-bia"><em>Business Impact Analysis</em> (BIA)</h2>
+<blockquote>
+<p>Identifies business functions and quantifies the impact of loss</p>
+</blockquote>
+<p>Impact on:</p>
+<ul>
+<li>property (tangible assets)</li>
+<li>finance (monetary funding)</li>
+<li>safety (physical protection)</li>
+<li>reputation (status)</li>
+<li>life (well-being)</li>
+</ul>
+<h3 id="derivations">Derivations</h3>
+<ul>
+<li><em>mission-essential function</em> - activity that serves as the core function of the enterprise</li>
+<li><em>critical system</em> - the support of the mission-essential function</li>
+<li><em>single-point of failure</em> (SPOF)</li>
+<li><em>privacy impact assessment</em></li>
+<li><em>privacy threshold assessment</em></li>
+</ul>
+<h2 id="disaster-recovery-plan-drp"><em>Disaster Recovery Plan</em> (DRP)</h2>
+<blockquote>
+<p>Document focusing on protecting and restoring IT functions, and updated regularly</p>
+</blockquote>
+<p>Most DRPs:</p>
+<ul>
+<li>Have a common set of features</li>
+<li>Cover specific topics</li>
+<li>Require testing for verification</li>
+</ul>
+<p>Typical Outline:</p>
+<ol type="1">
+<li>Purpose and Scope</li>
+<li>Recovery Team</li>
+<li>Preparing for a Disaster</li>
+<li>Emergency Procedures</li>
+<li>Restoration Procedures</li>
+</ol>
+<ul>
+<li>What systems have priority to be restored over others?</li>
+<li>What should be done if a disaster makes the current location no longer available?</li>
+<li><em>Failback</em> - resync data back to primary location</li>
+</ul>
+<h3 id="disaster-exercises">Disaster Exercises</h3>
+<p>Objectives:</p>
+<ul>
+<li>Test interdepartmental planning and coordination</li>
+<li>Test current DRP procedures</li>
+<li>Determine response strengths and weaknesses</li>
+</ul>
+<p>Vocab:</p>
+<ul>
+<li>Tabletop Exercises - Simulate emergency situation informally and stress-free environment</li>
+<li>Fault Tolerance</li>
+<li>Mean-Time to Recovery (MTTR) - Average time it takes for a device to recover from non-terminal failure</li>
+<li>Mean-Time Between Failures (MTBF)</li>
+<li>Redundant Array of Independent Devices (RAID)</li>
+<li>Redundancy Planning - Servers, Storage, Networks, Power, Sites, Data</li>
+<li>Asymmetric Server Cluster - data oriented</li>
+<li>Symmetric Server Cluster - service oriented</li>
+</ul>
+<h3 id="raid">RAID</h3>
+<ul>
+<li>RAID 0 - Data is striped across drives - no redundancy, only increased performance</li>
+<li>RAID 1 - Data is mirrored across drives - all redundancy, no performance</li>
+<li>RAID 5 - Data has error parity across drives - no redundancy, no performance, increased error checking</li>
+<li>RAID 01 - Mirrored Stripes</li>
+<li>RAID 10 - Striped Mirrors</li>
+</ul>
+<h3 id="networks">Networks</h3>
+<ul>
+<li>Software Defined Networks (SDN)</li>
+<li>Backup ISP</li>
+</ul>
+<h3 id="power">Power</h3>
+<ul>
+<li>Uninterruptible Power Supply (UPS)
+<ul>
+<li>Offline vs Online - Boots vs. Always Running</li>
+<li>Can ensure proper shutdown occurs</li>
+</ul></li>
+<li>Backup Generators</li>
+</ul>
+<h3 id="recovery-sites">Recovery Sites</h3>
+<ul>
+<li>Hot - Everything’s good to go, just need the data</li>
+<li>Cold - Just the office space</li>
+<li>Warm - All equipment, just no telecom</li>
+</ul>
+<h3 id="data">Data</h3>
+<ul>
+<li>Recovery Point Objective (RPO) - Max time between backups</li>
+<li>Recovery Time Objective (RTO) - Length of time it will take to recover backed-up data</li>
+<li><em>Full Backup</em> → only full is needed</li>
+<li><em>Differential Backup</em> → full + latest diff</li>
+<li><em>Incremental Backups</em> → full + sum incrementals</li>
+<li><em>Continuous Data Protection</em> (CPS)</li>
+<li><em>Automatic Continuous Backup</em></li>
+<li><em>Universal Access</em></li>
+<li><em>Delayed Deletion</em></li>
+</ul>
+<p>3-2-1:</p>
+<ul>
+<li>Three different copies</li>
+<li>Two different mediums</li>
+<li>One stored elsewhere</li>
+</ul>
+<h3 id="environmental-controls">Environmental Controls</h3>
+<ul>
+<li>Fire suppression</li>
+<li>Electromagnetic Disruption suppression</li>
+<li>HVAC</li>
+</ul>
+<h2 id="incident-response-plan-irp">Incident Response Plan (IRP)</h2>
+<ul>
+<li>Preparation</li>
+<li>Identification</li>
+<li>Containment</li>
+<li>Eradication</li>
+<li>Recovery</li>
+<li>Lessons Learned</li>
+</ul>
+<p>Forensic Procedures:</p>
+<ul>
+<li>Secure the Crime Scene</li>
+<li>Preserve the Evidence</li>
+<li>Establish a Chain of Custody</li>
+<li>Examine the Evidence</li>
+<li>Enable Recovery</li>
+</ul>

@@ -40,10 +40,10 @@
 - [x] PowerPoint Chapter 4 - ~~14 / 50~~
 - [x] Review - ~~3 / 20~~
 
-- [ ] Book Chapter 26
-- [ ] Book Chapter 27
-- [ ] Book Chapter 28
-- [ ] Book Chapter 29
+- [x] Book Chapter 26
+- [x] Book Chapter 27
+- [x] Book Chapter 28
+- [x] Book Chapter 29
 
 ## Chapter 8, 10
 
@@ -72,7 +72,7 @@
 
 - [x] PowerPoint Chapter 11 - 14 / 50
 - [ ] Review
-- [ ] PowerPoint Chapter 14
+- [x] PowerPoint Chapter 14 - 18 / 50
 - [ ] Review
 
 - [ ] Book Chapter 20
