@@ -14,6 +14,10 @@ Uses Radio Frequency (RF) to communicate
 - May require a _site survey_ to make decisions on optimal WAP placement
 - _Fat APs_ are self-contained, while _Thin APs_ are usually PoE and relay the same wireless signal
 - _Air Snort_ - software for listening to packets, in "promiscuous mode"
+- _Wireless LAN Controller_ - Doohickey for figuring out how to control APs FIXME
+  - uses Controller APs (thin APs)
+- _Wireless AP Probes_ - observe wireless traffic
+  - Wireless device probes, dedicated probes, AP probes
 
 Major parts of a WAP:
 
@@ -83,13 +87,14 @@ Can be enhanced with TKIP:
 - _Authenticator_ is responsible for issuing EAP request packets
 - Supports many authentication methods - tokens, smart cards, certs, one-time-passwords, public keys
 - Wi-Fi Protected Setup (WPS)
-  - 8-digit PIN
-  - not secure
+  - 8-digit PIN - not secure
+  - Push-button - secure
 
 #### EAP-FAST (Flexible Authentication via Secure Tunneling)
 
 - 2010, Cisco, replacement for LEAP (also Cisco)
 - Passes a Protected Access Credential (PAC) to establish TLS, through which client creds are verified
+- Uses both _passwords_ and _tokens_, with TLS
 
 #### EAP-TLS
 
@@ -121,6 +126,9 @@ Can be enhanced with TKIP:
 
 - Current version: 5
   - max-range: 800ft
+- Version 4: 24Mbps
+- "Classic, High Speed, Low Energy" modes
+- 2.4 GHz
 - Vulnerable to _bluesnarfing_ and _bluejacking_
   - snarfing - smell, jacking - uh...
 - uses _short-range_ radio
@@ -129,3 +137,8 @@ Can be enhanced with TKIP:
   - _active_ and _parked_ slaves
   - interconnected piconets form _scatternets_
 
+## ANT
+
+- Similar to bluetooth
+- 2.4 GHz
+- low chance of interference, great for clusters of devices

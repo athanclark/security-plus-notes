@@ -1,9 +1,10 @@
 <h1 id="advanced-cryptography-and-pki">Advanced Cryptography and PKI</h1>
 <ul>
 <li><em>crypto service provider</em> - calls crypto functions as a service</li>
-<li><em>digital certificate</em> - associates a user’s <em>identity</em> with their public key</li>
 <li><em>master secret</em> - used to derive session keys</li>
 <li>A <em>Cipher Suite</em> is the combination of encryption, signing, and hashing algorithms supported</li>
+<li><em>Pinning</em> - associating a host with a previous certificate or public key</li>
+<li><em>Key Escrow</em> - third party with your private key</li>
 </ul>
 <p>Three characteristics of <em>key strength</em>:</p>
 <ul>
@@ -31,25 +32,134 @@
 </ul></li>
 </ul>
 <h2 id="pki">PKI</h2>
+<h3 id="certificates">Certificates</h3>
+<blockquote>
+<p>binds an individual’s identity to a public key, by transitive trust of a third party</p>
+</blockquote>
 <ul>
-<li><em>Certificate Authorities</em> issue digital certificates
+<li>IETF X.509 Standard, version 3 (aka. PKIX - Public Key Infrastructure X.509)
 <ul>
-<li>They may be arranged <em>heirarchical</em> (one master / root, self-signed CA)</li>
-<li><em>distributed</em> (tree of CAs)</li>
+<li>version number</li>
+<li>subject (owner of cert)</li>
+<li>public key</li>
+<li>issuer</li>
+<li>serial number</li>
+<li>validity</li>
+<li>certificate usage</li>
+<li>signature algorithm</li>
+<li>extensions
+<ul>
+<li>iterated by Object Identifiers (OID), and critical / non-critical flag</li>
+<li>unrecognized critical fields must cause rejection</li>
+</ul></li>
+</ul></li>
+<li>May contain network address, or domain name
+<ul>
+<li>Wildcard certs: *.foo.com</li>
+</ul></li>
+<li><em>Subject Alternative Name</em> (SAN) / <em>Unified Communications Certificate</em> (UCC) - an <em>extension</em> to a certificate to include one or more domain names, or a user principal name (UPN), for added identity authenticity.</li>
+<li><em>Domain Validation</em> - low-trust cert that validates control over the domain name</li>
+<li><em>Extended Validation</em> - high-trust cert extension that allows enhancing the certificate with the company name
+<ul>
+<li>do not support wildcards</li>
+</ul></li>
+</ul>
+<p>Four primary types:</p>
+<ul>
+<li>End-entity certs - end-users, like people, routers, firewalls, servers</li>
+<li>CA certs</li>
+<li>Cross-certification certs - peer-to-peer trusts</li>
+<li>Policy certs - CA-approved PKI policy</li>
+</ul>
+<p>Encoding and format:</p>
+<ul>
+<li>Distinguished Encoding Rules (DER)
+<ul>
+<li>ASN.1, can encode any data object to a binary</li>
+<li>.der</li>
+</ul></li>
+<li>Privacy-Enhanced Electronic Mail (PEM)
+<ul>
+<li>most common</li>
+<li>Base64, text header and footer</li>
+<li>.pem, .cer, .crt, .key</li>
+</ul></li>
+<li>Microsoft CER
+<ul>
+<li>Binary DER or ASCII PEM</li>
+<li>.cer for Windows, .crt UNIX</li>
+</ul></li>
+<li>Key File
+<ul>
+<li>PKCS#8 Keys</li>
+<li>DER or PEM</li>
+<li>.key</li>
+</ul></li>
+<li>PFX
+<ul>
+<li>PKCS#12</li>
+<li>Import and export on Windows - Binary - Storing server cert, intermediate certs, and private key</li>
+<li>.pfx, .p12 . P7B</li>
+<li>PKCS#7</li>
+<li>Base64 ASCII</li>
+<li>Certs and Cert Chains</li>
+<li>Windows &amp; Java Tomcat</li>
+<li>.p7b, .p7c</li>
+</ul></li>
+</ul>
+<h3 id="certificate-authorities">Certificate Authorities</h3>
+<ul>
+<li>issue digital certificates via a <em>Certificate Signing Request</em> (CSR) - how someone associates their identity to their public key</li>
+<li>comprised of:
+<ul>
+<li>software</li>
+<li>hardware</li>
+<li>procedures</li>
+<li>policies</li>
+<li>people</li>
+</ul></li>
+<li><em>Certificate Practice Statement</em> (CPS) is a document detailing how a CA manages its certificates, and how to register for one</li>
+<li><em>Intermediate CA</em> - transfers trust between CAs
+<ul>
+<li>aka “subordinate CA”</li>
+<li>subordinate CA uses higher-level CA as a reference</li>
+</ul></li>
+</ul>
+<h4 id="trust-models">Trust Models</h4>
+<ul>
+<li>They may be arranged <em>heirarchical</em> (one master / root, self-signed CA)
+<ul>
+<li>unidirectional trusts</li>
+<li>tree of root CA, intermediate CAs, leaf CAs</li>
+</ul></li>
+<li><em>distributed</em> (group of CAs), aka “peer-to-peer”
+<ul>
+<li>no established trust anchor between CAs</li>
+<li>bidirectional trust, <em>cross certification</em></li>
+<li>not scalable - fully connected mesh</li>
+</ul></li>
+<li><em>hybrid</em>
+<ul>
+<li>roots are cross certified</li>
 <li><em>bridge</em> - link between multiple CA networks, with one acting as a <em>facilitator</em></li>
 </ul></li>
-<li><em>Certificate Repositories</em> manage a centralized directory of digital certificates</li>
-<li><em>Certificate Revocation Lists</em> declare what certificates are no longer (or temporarily) invalid</li>
-<li><em>Online Certificate Status Protocol</em> (OCSP) checks a cert’s status</li>
-<li><em>Extended Validation Certificates</em> showcase the name of the company, as further trust. FIXME</li>
-<li><em>Certificate Policies</em> are a set of rules that govern the operation of PKI</li>
-<li><em>Certificate Signing Request</em> (CSR) - how someone associates their identity to their public key</li>
-<li><em>Subject Alternative Name</em> (SAN) / <em>Unified Communications Certificate</em> (UCC) - an extension to a certificate to include one or more domain names, or a user principal name (UPN), for added identity authenticity.</li>
-<li><em>Web-Client Certificates</em> ensure for a web-browser that a web-server is authentic w.r.t. their domain.</li>
-<li><em>Certificate Practice Statement</em> (CPS) is a document detailing how a CA manages its certificates, and how to register for one</li>
-<li><em>Domain Validation Digital Certificate</em> - validates control over the domain name</li>
-<li><em>Extended Validation</em> - Allows enhancing the certificate with the company name for further validation</li>
-<li><em>destruction</em> - removing affiliation with a certificate, and private / public keys</li>
+</ul>
+<h3 id="certificate-revocation-lists">Certificate Revocation Lists</h3>
+<blockquote>
+<p>declare what certificates are no longer (or temporarily) invalid</p>
+</blockquote>
+<ul>
+<li><p>Maintained by owning CA</p></li>
+<li><p>Communication might be through the use of deltas after an initial set</p></li>
+<li><p><em>Online Certificate Status Protocol</em> (OCSP)</p>
+<ul>
+<li>checks a cert’s status via n OCSP server, rather than pushing distribution lists</li>
+</ul></li>
+<li><p>Suspension requests can also be enumerated in CRLs</p></li>
+<li><p><em>Certificate Repositories</em> manage a centralized directory of digital certificates, aka. Key Escrow</p></li>
+<li><p><em>Certificate Policies</em> are a set of rules that govern the operation of PKI</p></li>
+<li><p><em>Web-Client Certificates</em> ensure for a web-browser that a web-server is authentic w.r.t. their domain.</p></li>
+<li><p><em>destruction</em> - removing affiliation with a certificate, and private / public keys</p></li>
 </ul>
 <p>Four stages of certificate life cycle:</p>
 <ul>

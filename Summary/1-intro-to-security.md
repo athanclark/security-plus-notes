@@ -27,15 +27,17 @@ To ward off attacks, & prevent total collapse when an attack is successful.
 
 #### Roles
 
+TODO
+
 - _Security Administrator_: Analyze and design security solutions as well as identifying users' needs
   - does **NOT** report directly to the CIO
 - _Security Manager_: Reports directly to the CISO, and supervises technicians, admins, and security staff
 - _Security Analyst_:
   - Job growth to be 18% by 2024
 - _Security Technician_: Entry-level position
-- CSO
-- CIO
-- CSIO
+- _Chief Security Officer_ (CSO)
+- _Chief Information Officer_ (CIO)
+- _Chief Security Information Officer_ (CSIO) - Reports to the CIO
 
 ---------------------------------
 
@@ -76,6 +78,8 @@ Three types of **information protection**:
 - _Obscurity_ - not revealing any details about products used
 - _Simplicity_ - hardened designs, like a 50 cal
 
+TODO Reference architectures?
+
 - industry standard frameworks and reference architectures give broad guidance about a security framework
   - regulatory frameworks are required by external agencies
   - industry-specific frameworks address a particular sector; i.e. finance vs. power grid
@@ -115,7 +119,7 @@ Three types of **information protection**:
 - _HIPAA_ ~ health insurance portability & accountability act (1996)
   - confidentiality of health reports
 - _Sarbanes-Oxley_ act of 2002 (Sarbox)
-  - 
+  - TODO 
 - _Gramm-Leach-Bliley_ act (GLBA)
   - Requires banks and financial institutions to alert their customers of policies
     and practices in reporting and disclosing customer info

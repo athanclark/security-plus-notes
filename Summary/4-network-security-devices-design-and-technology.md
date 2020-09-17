@@ -11,6 +11,10 @@ Network Security Devices, Design, and Technology
 - each has different networking tasks
 - each cooperates with adjacent layers
 
+Private IP Ranges:
+
+TODO
+
 -----------------------------
 
 ## Devices
@@ -42,6 +46,11 @@ Network Security Devices, Design, and Technology
 - software or hardware based
 - layer 4 (network & transport layers) or layer 7 (application layer - HTTP)
 - different scheduling mechanisms - round-robin, affinity, other
+
+Load Balancing Configurations:
+
+- Active-Active - TODO
+- ...TODO
 
 ### Proxies
 
@@ -123,6 +132,7 @@ Advantages:
 - anomaly-based compared to some baseline
 - signature-based compared to well-known attacks
 - behavior-based by watching abnormal actions of processes and programs - alerts user
+  - better than anomaly-based and signature based by being adaptive & proactive, not reactive
 - heuristic monitoring via experience-based techniques
   
 ### Intrusion Prevention System

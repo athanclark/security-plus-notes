@@ -10,6 +10,15 @@
 <li>WAPs traditionally radiate in all directions, and should be centrally located</li>
 <li>May require a <em>site survey</em> to make decisions on optimal WAP placement</li>
 <li><em>Fat APs</em> are self-contained, while <em>Thin APs</em> are usually PoE and relay the same wireless signal</li>
+<li><em>Air Snort</em> - software for listening to packets, in “promiscuous mode”</li>
+<li><em>Wireless LAN Controller</em> - Doohickey for figuring out how to control APs FIXME
+<ul>
+<li>uses Controller APs (thin APs)</li>
+</ul></li>
+<li><em>Wireless AP Probes</em> - observe wireless traffic
+<ul>
+<li>Wireless device probes, dedicated probes, AP probes</li>
+</ul></li>
 </ul>
 <p>Major parts of a WAP:</p>
 <ul>
@@ -22,10 +31,14 @@
 <blockquote>
 <p><em>“War Driving”</em> - the act of driving around, snooping for vulnerable access points</p>
 </blockquote>
-<h4 id="wep">WEP</h4>
+<h4 id="wired-equivalent-privacy-wep">Wired Equivalent Privacy (WEP)</h4>
+<ul>
+<li>Uses RC4</li>
+<li>can take only a few hours to crack, 4/5 million packets (due to weak IVs)</li>
+</ul>
 <p>Normally:</p>
 <ul>
-<li>64b Key Length</li>
+<li>64b Key Length (802.11 a and g extended to 152b)</li>
 <li>24b IV</li>
 </ul>
 <p>Can be enhanced with TKIP:</p>
@@ -35,25 +48,89 @@
 <li>IV increased to 48b</li>
 <li>Passphrases are used to derive a shared master key</li>
 <li>session keys are derived from master key + MAC</li>
+<li>new key for every <strong>packet</strong></li>
 </ul>
-<h4 id="wpa2">WPA2</h4>
+<h4 id="wi-fi-protected-access-wpa">Wi-Fi Protected Access (WPA)</h4>
+<blockquote>
+<p>WEP + TKIP</p>
+</blockquote>
 <ul>
-<li>AES-CCMP
+<li>lack of forward secrecy protection - if attacker knows WPA key, they can listen to <em>all</em> connections</li>
+<li><em>Open-System Authentication</em> - session key based on SSID, issued to client</li>
+</ul>
+<h4 id="wpa2---802.11i">WPA2 - 802.11i</h4>
+<ul>
+<li>Uses 802.1X for authentication</li>
+<li>AES-CCMP for encryption (Counter Mode with Cipher Block Chaining - Message Authentication Code Protocol)
 <ul>
 <li>AES-256 with 13 rounds</li>
+<li>provides message integrity in AES</li>
+<li>requires new hardware</li>
 </ul></li>
-<li>WPA Personal is authenticated with PSK</li>
 </ul>
-<h4 id="eap">EAP</h4>
+<h5 id="psk-pre-shared-key-vs-enterprise">PSK (Pre-Shared Key) vs Enterprise</h5>
 <ul>
+<li>WPA Personal is authenticated with PSK, passphrase up to 63 characters, converted to 256b key
+<ul>
+<li>should be at least 20 chars</li>
+</ul></li>
+<li>WPA Enterprise uses 802.1X and RADIUS server
+<ul>
+<li>can integrate NAC</li>
+</ul></li>
+</ul>
+<h5 id="captive-portal">Captive Portal</h5>
+<ul>
+<li>Uses HTTP to handle authentication (public hotspots)</li>
+</ul>
+<h3 id="authentication-protocols">Authentication Protocols</h3>
+<h4 id="extensible-authentication-protocol-eap">Extensible Authentication Protocol (EAP)</h4>
+<ul>
+<li>Heritage from PPP</li>
+<li>Framework to secure the authentication process</li>
 <li>Four packet types: Request, Response, Success, Failure</li>
 <li><em>Supplicant</em> sends identity information to <em>Authenticator</em></li>
 <li><em>Authenticator</em> is responsible for issuing EAP request packets</li>
+<li>Supports many authentication methods - tokens, smart cards, certs, one-time-passwords, public keys</li>
+<li>Wi-Fi Protected Setup (WPS)
+<ul>
+<li>8-digit PIN - not secure</li>
+<li>Push-button - secure</li>
+</ul></li>
 </ul>
-<h4 id="captive-portal-ap">Captive Portal AP</h4>
-<h4 id="x-authentication">802.1x Authentication</h4>
+<h4 id="eap-fast-flexible-authentication-via-secure-tunneling">EAP-FAST (Flexible Authentication via Secure Tunneling)</h4>
+<ul>
+<li>2010, Cisco, replacement for LEAP (also Cisco)</li>
+<li>Passes a Protected Access Credential (PAC) to establish TLS, through which client creds are verified</li>
+<li>Uses both <em>passwords</em> and <em>tokens</em>, with TLS</li>
+</ul>
+<h4 id="eap-tls">EAP-TLS</h4>
+<ul>
+<li>2010, IETF</li>
+<li>one of the most secure</li>
+<li>Uses client-side certs</li>
+</ul>
+<h4 id="eap-ttls-eap-tunneled-tls">EAP-TTLS (EAP-Tunneled TLS)</h4>
+<ul>
+<li>2010</li>
+<li>Like EAP-TLS, but tunnels the client’s authentication</li>
+<li>Allows secure use of legacy auth like
+<ul>
+<li>Password Authentication Protocol (PAP)</li>
+<li>Challenge-Handshake Authentication Protocol (CHAP)</li>
+<li>MS-CHAP, MS-CHAPv2</li>
+</ul></li>
+<li>Doesn’t necessarily require client-side certs</li>
+</ul>
+<h4 id="x-authentication">802.1X Authentication</h4>
 <ul>
 <li>Most secure is <em>certificate-based authentication</em></li>
+<li>“port-based” authentication service</li>
+<li>When used over wireless, either 802.11i or EAP is used</li>
+</ul>
+<h4 id="radius">RADIUS</h4>
+<ul>
+<li>“Federated” logins</li>
 </ul>
 <h2 id="bluetooth">BlueTooth</h2>
 <ul>
@@ -61,6 +138,9 @@
 <ul>
 <li>max-range: 800ft</li>
 </ul></li>
+<li>Version 4: 24Mbps</li>
+<li>“Classic, High Speed, Low Energy” modes</li>
+<li>2.4 GHz</li>
 <li>Vulnerable to <em>bluesnarfing</em> and <em>bluejacking</em>
 <ul>
 <li>snarfing - smell, jacking - uh…</li>
@@ -72,4 +152,10 @@
 <li><em>active</em> and <em>parked</em> slaves</li>
 <li>interconnected piconets form <em>scatternets</em></li>
 </ul></li>
+</ul>
+<h2 id="ant">ANT</h2>
+<ul>
+<li>Similar to bluetooth</li>
+<li>2.4 GHz</li>
+<li>low chance of interference, great for clusters of devices</li>
 </ul>
