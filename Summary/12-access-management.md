@@ -143,6 +143,8 @@ then distribute operation of process to two or more parties
 
 - Windows Group Policy for users of Active Directory, settings stored in Group Policy Objects
   - Local Group Policy - fewer options, not for AD
+  - _Software Restrictive Policies_ - employed by group policies, per-machine
+  - _User Account Level Control_ - Enforced via AppLocker; per-user
   
 ### Identity and Access Services
 

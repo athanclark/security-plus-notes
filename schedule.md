@@ -11,7 +11,7 @@
 - [x] Book Chapter 2
 - [x] Book Chapter 3
 
-## Chapter 5, 6 - Networking
+## Chapter 5, 6 - Networking [Complete]
 
 - [x] PowerPoint Chapter 5 - ~~9 / 50~~
 - [x] Review - ~~2 / 20~~
@@ -20,7 +20,7 @@
 
 - [x] Book Chapter 6
 - [x] Book Chapter 7
-- [ ] Book Chapter 11
+- [x] Book Chapter 11
 
 ## Chapter 9, 13 - Vulnerabilities
 
@@ -29,8 +29,8 @@
 - [x] PowerPoint Chapter 13 - 15 / 50
 - [x] Review - 3 / 20
 
-- [ ] Book Chapter 4
-- [ ] Book Chapter 5
+- [x] Book Chapter 4
+- [x] Book Chapter 5
 - [ ] Book Chapter 12
 - [ ] Book Chapter 14
 - [ ] Book Chapter 17

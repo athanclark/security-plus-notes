@@ -78,13 +78,20 @@ Three types of **information protection**:
 - _Obscurity_ - not revealing any details about products used
 - _Simplicity_ - hardened designs, like a 50 cal
 
-TODO Reference architectures?
+### Frameworks and Architectures
 
-- industry standard frameworks and reference architectures give broad guidance about a security framework
-  - regulatory frameworks are required by external agencies
-  - industry-specific frameworks address a particular sector; i.e. finance vs. power grid
+- _framework_ - describes objectives and methodologies
+- _architecture_ - specifies components and technology to achieve the objectives
+- _industry standard frameworks_ and _reference architectures_ give broad guidance about a security framework
+
+Types of frameworks:
+
+- _regulatory_ - frameworks are required by external agencies & governments - NERC
+- _non-regulatory_ - not industry specific, or regulated - NIST
+- _national & international_ - assists in government compliance, or cooperating between different nation's compliance
   - some are globally designed, others specific to a region
-  - Common frameworks include ISO, COBIT, RFC (FIXME)
+- _industry-specific_ - address a particular sector; i.e. finance vs. power grid - HIPAA
+- Common frameworks include ISO, COBIT, RFC (FIXME)
   
 > Information security **protects and establishes** CIA on devices that
 > _store, process, and transmit_ data; by using _products, people, and procedures._

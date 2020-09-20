@@ -169,5 +169,5 @@ Four basic protections of crypto:
 - Hardware Encryption - trusted platform module, hardware security model
   - password-protected flash drives
   - self-encrypting drives (SED)
-  - TPM - true random numbers & other crypto services, built in motherboard / hardware
-  - HSM - onboard keygen and storage
+  - Trusted Platform Module (TPM) - true random numbers & other crypto services, built in motherboard / hardware
+  - Hardware Security Module (HSM) - onboard keygen and storage, via USB or some peripheral

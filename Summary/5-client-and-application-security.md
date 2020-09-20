@@ -4,6 +4,9 @@ Client and Application Security
 > Proper use of machine hardware security systems, securing the operating system,
 > and protecting peripheral devices.
 
+- End-of-Life systems
+- Lack of vendor support - can cause "end-of-life" designation
+
 ## Hardware System Security
 
 Supply Chain Infections are difficult to determine, and revert - it's virtually impossible
@@ -150,11 +153,15 @@ Telecommunications Electronics Material Protected from Emanating Spurious Transm
 - buffer overflow
 - DLL injection
 - pointer dereferences
+- race conditions - can be used for privilege escalation, and DoS. Solutions include reference counters, kernel locks, and thread sync
+- improper input handling - #1 cause for vulnerabilities - can cause buffer overflows, injection attacks, and canonical structure errors
+- improper error handling - echoing error details to user could give attackers insight
+- memory leaks - lack of deallocation
 
 ### Stages
 
-- Development
-- Testing
+- Development - doesn't need to scale
+- Testing - closely mimics prod environment - same version numbers
 - Staging - "quality assurance"
 - Production
 
