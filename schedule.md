@@ -31,8 +31,8 @@
 
 - [x] Book Chapter 4
 - [x] Book Chapter 5
-- [ ] Book Chapter 12
-- [ ] Book Chapter 14
+- [x] Book Chapter 12
+- [x] Book Chapter 14
 - [ ] Book Chapter 17
 
 ## Chapter 3, 4 - Cryptography [Complete]
