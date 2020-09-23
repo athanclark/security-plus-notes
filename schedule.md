@@ -22,18 +22,18 @@
 - [x] Book Chapter 7
 - [x] Book Chapter 11
 
-## Chapter 9, 13 - Vulnerabilities
+## Chapter 9, 13 - Vulnerabilities [Complete]
 
-- [x] PowerPoint Chapter 9 - 13 / 50
-- [x] Review - 7 / 20
-- [x] PowerPoint Chapter 13 - 15 / 50
-- [x] Review - 3 / 20
+- [x] PowerPoint Chapter 9 - ~~13 / 50~~
+- [x] Review - ~~7 / 20~~
+- [x] PowerPoint Chapter 13 - ~~15 / 50~~
+- [x] Review - ~~3 / 20~~
 
 - [x] Book Chapter 4
 - [x] Book Chapter 5
-- [ ] Book Chapter 12
-- [ ] Book Chapter 14
-- [ ] Book Chapter 17
+- [x] Book Chapter 12
+- [x] Book Chapter 14
+- [x] Book Chapter 17
 
 ## Chapter 3, 4 - Cryptography [Complete]
 
@@ -77,7 +77,7 @@
 - [x] PowerPoint Chapter 14 - 18 / 50
 - [ ] Review
 
-- [ ] Book Chapter 20
+- [x] Book Chapter 20
 - [ ] Book Chapter 22
 - [ ] Book Chapter 23
 - [ ] Book Chapter 24

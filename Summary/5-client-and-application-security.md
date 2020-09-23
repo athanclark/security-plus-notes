@@ -178,11 +178,11 @@ Telecommunications Electronics Material Protected from Emanating Spurious Transm
 
 ### Methodologies
 
-- model verification
+- model verification - validation → specs are "valid" to the customer, verification → code meets specs
 - compiled code testing
-- runtime code testing
+- runtime code testing - "dynamic analysis"
 - static program analyzers
 - dynamic analysis (fuzzing)
   - randomized inputs
-- stress testing
+- stress testing vs. load testing
 - integrity measurements
